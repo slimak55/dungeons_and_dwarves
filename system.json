@@ -1,0 +1,27 @@
+{
+  "id": "dungeons_and_dwarves",
+  "title": "Dungeons & Dwarves",
+  "description": "System for DnD 5e variations Dungeons & Dwarves",
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "11",
+    "maximum": "11"
+  },
+  "authors": [
+    {
+    "name": "Michal Cloud",
+    "url": "https://cloudfolium.eu/",
+    "discord": "slimak55"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "primaryTokenAttribute": "resources.health",
+  "secondaryTokenAttribute": "resources.mana"
+}
