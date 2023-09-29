@@ -8,8 +8,8 @@
     "verified": "11",
     "maximum": "11"
   },
-  "authors": [
-    {
+  "esmodules": ["dwarves.js"],
+  "authors": [ {
     "name": "Michal Cloud",
     "url": "https://cloudfolium.eu/",
     "discord": "slimak55"
@@ -22,6 +22,9 @@
       "path": "lang/en.json"
     }
   ],
+  "gridDistance": 5,
+  "gridUnit":"ft",
+  "initiative":"1d20 + @dex",
   "primaryTokenAttribute": "resources.health",
   "secondaryTokenAttribute": "resources.mana"
 }

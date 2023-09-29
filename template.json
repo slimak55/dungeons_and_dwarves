@@ -2,55 +2,52 @@
 "Actor": {
   "types": ["PC", "NPC", "Enemy"],
   "templates": {
-    "background": {
-      "biography": ""
+    "abilities": {
+    "str":{
+      "value": 10,
+      "proficient": 0,
+      "max": null
+      },
+    "dex":{
+      "value": 10,
+      "proficient": 0,
+      "max": null
+      },
+    "int":{
+      "value": 10,
+      "proficient": 0,
+      "max": null
+      },
+    "cha":{
+      "value": 10,
+      "proficient": 0,
+      "max": null
+      },
+    "per":{
+      "value": 10,
+      "proficient": 0,
+      "max": null
+      }
     },
- "abilities": {
- 	"str":{
- 		"value": 10,
- 		"proficient": 0,
- 		"max": null
- 		},
-	"dex":{
- 		"value": 10,
- 		"proficient": 0,
- 		"max": null
- 		},
- 	"int":{
- 		"value": 10,
- 		"proficient": 0,
- 		"max": null
- 		},
- 	"cha":{
- 		"value": 10,
- 		"proficient": 0,
- 		"max": null
- 		},
- 	"per":{
- 		"value": 10,
- 		"proficient": 0,
- 		"max": null
- 		}
- 	},
- 	 "attributes":{
- 	 	"ac": {
+    "attributes":{
+       "ac": {
             "flat": null,
             "calc": "default",
             "formula": ""
           },
-          "hp": {
+        "exhaust":{
+            "value":0,
+            "max":8
+          },
+        "hp":{
             "value": 10,
-            "max": null,
+            "max": null
           },
-          "mana": {
+        "mana": {
             "value": 10,
-            "max": null,
+            "max": null
           },
-          "init": {
-            "ability": "",
-            "bonus": ""
-          },
-          "movement": {
+        "movement": {
             "burrow": 0,
             "climb": 0,
             "fly": 0,
@@ -58,25 +55,62 @@
             "walk": 30,
             "units": "ft",
             "hover": false
-          },
-          "exhaust":{"value":0,
-          			"max":8}
-
- 	 },
-
- 	  "details": {
-          "biography": {
-            "value": "",
-            "public": ""
-          },
-
-		"currency": {
+          }
+    },
+    "currency": {
           "pp": 0,
           "gp": 0,
           "sp": 0,
           "cp": 0
-        }
+    },
+    "details": {
+          "biography": {
+            "value": "",
+            "public": ""
+          },
+          "race":"",
+          "class":""
+    }
+}
 
- },
 
+},
+
+  "Item": {
+  "types": ["melee_weapon", "spell","consumable","range_weapon","skills"],
+  "melee_weapon":{
+    "damage":0,
+    "mod":0,
+    "weapon_type":"",
+    "info":"" 
+  },
+  "range_weapon":{
+    "damage":0,
+    "mod":0,
+    "ammo":"",
+    "ammo_count":0,
+    "weapon_type":"",
+    "info":"" 
+  },
+  "spell":{
+    "damage":0,
+    "mod":0,
+    "mana":0,
+    "type":"",
+    "info":"" 
+  },
+  "consumable":{
+    "effect":0,
+    "type":"",
+    "info":"" 
+  },
+  "skills":{
+    "damage":0,
+    "mod":0,
+    "type":"",
+    "info":"",
+    "cooldown":0
+  }
+
+  }
 }

@@ -1,1 +1,18 @@
-{}
+{
+
+"dnd": {
+
+	"weapon":{
+	"none": "",
+	"small":"Small",
+	"light":"Light",
+	"medium":"Medium",
+	"heavy":"Heavy",
+	"special":"Special"
+
+	}
+
+}
+
+
+}
