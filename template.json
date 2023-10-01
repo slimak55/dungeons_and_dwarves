@@ -80,17 +80,29 @@
   "types": ["melee_weapon", "spell","consumable","range_weapon","skills"],
   "melee_weapon":{
     "damage":0,
+    "damage_type":"",
     "mod":0,
     "weapon_type":"",
-    "info":"" 
+    "weapon_mod":"",
+    "info":"",
+    "eq":false,
+    "cost":0,
+    "cost_type":"",
+    "quantity":0
   },
   "range_weapon":{
     "damage":0,
+    "damage_type":"",
     "mod":0,
     "ammo":"",
     "ammo_count":0,
     "weapon_type":"",
-    "info":"" 
+    "weapon_mod":"",
+    "info":"",
+    "eq":false,
+    "cost":0,
+    "cost_type":"",
+    "quantity":0
   },
   "spell":{
     "damage":0,
@@ -100,9 +112,12 @@
     "info":"" 
   },
   "consumable":{
-    "effect":0,
+    "effect":"",
     "type":"",
-    "info":"" 
+    "info":"",
+    "cost":0,
+    "cost_type":"",
+    "quantity":0
   },
   "skills":{
     "damage":0,

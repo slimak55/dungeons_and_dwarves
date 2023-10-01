@@ -9,6 +9,9 @@
     "maximum": "11"
   },
   "esmodules": ["dwarves.js"],
+  "styles": [
+    "styles/style.css"
+  ],
   "authors": [ {
     "name": "Michal Cloud",
     "url": "https://cloudfolium.eu/",

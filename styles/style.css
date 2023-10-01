@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+
+body {font-family: 'Young Serif', serif;}
+
+h1{background:linear-gradient(to right bottom, #000000, #302f30, #5c5c5d, #8c8d8e, #bfc2c2);
+	-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+h2{ font-size: 25px;
+	background: linear-gradient(to right top, #051937, #103a5f, #175f88, #1e87b0, #2bb1d6);
+	-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; }
+
+.bold { font-weight: bold }
+
+.table_main{ border-width:0px;
+			border-radius:5px;
+			padding:10px;
+			align-items:center; }
+
+.table_shadow{}
+
+.table_shadow:hover{
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; }
+
+.test{margin:50px}
+
+.editor{ height:200px; }
+
+.editor-content:hover {border-radius:5px;
+box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+	}
+select:focus, input[type="text"]:focus, input[type="number"]:focus{ box-shadow: #165491 1px 0 10px;
+border-radius: 5px; };
+
+
