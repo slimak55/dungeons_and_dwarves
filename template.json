@@ -88,41 +88,47 @@
     "eq":false,
     "cost":0,
     "cost_type":"",
-    "quantity":0
+    "quantity":0,
+    "rarity":""
   },
   "range_weapon":{
     "damage":0,
     "damage_type":"",
     "mod":0,
-    "ammo":"",
-    "ammo_count":0,
+    "ammo_1":"",
+    "ammo_2":"",
+    "ammo_count_1":0,
+    "ammo_count_2":0,
     "weapon_type":"",
     "weapon_mod":"",
     "info":"",
     "eq":false,
     "cost":0,
     "cost_type":"",
-    "quantity":0
+    "quantity":0,
+    "rarity":""
   },
   "spell":{
     "damage":0,
+    "damage_type":"",
     "mod":0,
     "mana":0,
-    "type":"",
+    "s_type":"",
     "info":"" 
   },
   "consumable":{
     "effect":"",
-    "type":"",
+    "c_type":"",
     "info":"",
     "cost":0,
     "cost_type":"",
-    "quantity":0
+    "quantity":0,
+    "rarity":""
   },
   "skills":{
     "damage":0,
     "mod":0,
-    "type":"",
+    "s_type":"",
     "info":"",
     "cooldown":0
   }

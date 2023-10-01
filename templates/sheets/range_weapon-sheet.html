@@ -13,6 +13,8 @@
     <td><input name="system.damage" type="text" value="{{system.damage}}"/></td>
      <td class="bold">Damage Modifier:</td>
      <td><select name="system.weapon_mod"> {{selectOptions config.weapon_mod selected=system.weapon_mod}}</select></td>
+      <td class="bold">Unique Modifier:</td>
+     <td><input name="system.mod" type="text" value="{{system.mod}}" data-dtype="Number"/></td>
   </tr>
   <tr>
     <td class="bold">Weapon Type:</td>
@@ -30,9 +32,32 @@
     <td class="bold">Cost:</td>
     <td><input name="system.cost" type="text" value="{{system.cost}}" data-dtype="Number"/></td>
     <td><select name="system.cost_type"> {{selectOptions config.cost_type selected=system.cost_type}}</select></td>
+    <td class="bold">Rarity:</td>
+    <td><select name="system.rarity"> {{selectOptions config.rarity selected=system.rarity}}</select></td>
   </tr>
 </table>
  </div>
+  <div class="flexrow">
+     <h2>Ammo</h2>
+  </div>
+    <div class="flexrow">
+       <table class="table_main table_shadow">
+        <tr>
+          <th>Type</th>
+          <th>Quantity</th>
+        </tr>
+        <tr>
+          <td><input name="system.ammo_1" type="text" value="{{system.ammo_1}}"/></td>
+          <td><input name="system.ammo_count_1" type="text" value="{{system.ammo_count_1}}" data-dtype="Number"/></td>
+        </tr>
+          <tr>
+          <td><input name="system.ammo_2" type="text" value="{{system.ammo_2}}"/></td>
+          <td><input name="system.ammo_count_2" type="text" value="{{system.ammo_count_2}}" data-dtype="Number"/></td>
+        </tr>
+       </table>
+
+  </div>
+
      <div class="flexrow">
 <h2>Description</h2>
 </div>

@@ -39,3 +39,23 @@ dungeons_and_dwarves.cost_type = {
 
 
 }
+
+dungeons_and_dwarves.rarity = {
+
+	common:"Common",
+	uncommon:"Uncommon",
+	rare:"Rare",
+	epic:"Epic",
+	legendary:"Legendary"
+
+}
+
+dungeons_and_dwarves.c_type = {
+
+	none:"",
+	supplies:"Supplies",
+	potion:"Potion",
+	other:"Other"
+
+
+}

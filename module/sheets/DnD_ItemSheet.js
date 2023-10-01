@@ -2,6 +2,18 @@ export default class DnD_ItemSheet extends ItemSheet {
 	get template() {
 		return `systems/dungeons_and_dwarves/templates/sheets/${this.item.type}-sheet.html`; }
 
+		static get defaultOptions() {
+    return mergeObject(super.defaultOptions, {
+ 
+      width: 700
+   
+
+    });
+  }
+
+
+
+
 		async getData() {
 
 			 const context = super.getData();

@@ -4,27 +4,15 @@
         <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
     </header>
    <div class="flexrow">
-    <h2 class="box_w">Weapon Info</h2>
+    <h2>Basic Effects and Info</h2>
       </div>
-      <div class="flexrow">
-    <table class="table_main table_shadow">
+       <div class="flexrow">
+      <table class="table_main table_shadow">
   <tr>
-    <td class="bold">Weapon Damage:</td>
-    <td><input name="system.damage" type="text" value="{{system.damage}}"/></td>
-     <td class="bold">Damage Modifier:</td>
-     <td><select name="system.weapon_mod"> {{selectOptions config.weapon_mod selected=system.weapon_mod}}</select></td>
-     <td class="bold">Unique Modifier:</td>
-     <td><input name="system.mod" type="text" value="{{system.mod}}" data-dtype="Number"/></td>
-  </tr>
-  <tr>
-    <td class="bold">Weapon Type:</td>
-    <td><select name="system.weapon_type"> {{selectOptions config.weapon_type selected=system.weapon_type}}</select></td>
-    <td class="bold">Damage Type:</td>
-     <td><select name="system.damage_type"> {{selectOptions config.damage_type selected=system.damage_type}}</select></td>
-  </tr>
-    <tr>
-     <td class="bold">Is Equiped?:</td>
-    <td><input type="checkbox" name="system.eq" {{checked system.eq}}></td>
+    <td class="bold">Effect power:</td>
+    <td><input name="system.effect" type="text" value="{{system.effect}}"/></td>
+     <td class="bold">Type of Item:</td>
+     <td><select name="system.c_type"> {{selectOptions config.c_type selected=system.c_type}}</select></td>
   </tr>
       <tr>
      <td class="bold">Quantity:</td>
@@ -37,8 +25,9 @@
   </tr>
 </table>
  </div>
+
      <div class="flexrow">
-<h2>Description</h2>
+<h2>Effects or Description</h2>
 </div>
 <div class="flexrow">
  {{editor item.info target="system.info" button=true editable=editable}}

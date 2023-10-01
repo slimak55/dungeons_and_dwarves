@@ -33,4 +33,4 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 select:focus, input[type="text"]:focus, input[type="number"]:focus{ box-shadow: #165491 1px 0 10px;
 border-radius: 5px; };
 
-
+ { width:700px; }
