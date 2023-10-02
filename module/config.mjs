@@ -26,7 +26,20 @@ dungeons_and_dwarves.damage_type = {
 
 	bludgeoning:"Bludgeoning",
 	piercing:"Piercing",
-	slashing:"Slashing"
+	slashing:"Slashing",
+	poison:"Poison",
+	acid:"Acid",
+	Fire:"Fire",
+	cold:"Cold",
+	radiant:"Radiant",
+	necrotic:"Necrotic",
+	lighting:"Lighting",
+	thunder:"Thunder",
+	force:"Force",
+	psychic:"Psychic",
+	holy:"Holy",
+	dark:"Dark"
+
 
 }
 
@@ -57,5 +70,22 @@ dungeons_and_dwarves.c_type = {
 	potion:"Potion",
 	other:"Other"
 
+
+}
+dungeons_and_dwarves.aoe = {
+
+	none:"None",
+	cone:"Cone",
+	cube:"Cube",
+	cylinder:"Cylinder",
+	line:"Line",
+	sphere:"Sphere"
+
+}
+dungeons_and_dwarves.s_type = {
+
+	normal:"Normal",
+	reactional:"Reactional",
+	passive:"Passive"
 
 }

@@ -1,0 +1,39 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+    </header>
+   <div class="flexrow">
+    <h2 class="box_w">Skill Info</h2>
+      </div>
+      <div class="flexrow">
+    <table class="table_main table_shadow">
+  <tr>
+    <td class="bold">Skill Damage:</td>
+    <td><input name="system.damage" type="text" value="{{system.damage}}"/></td>
+     <td class="bold">Damage Modifier:</td>
+     <td><select name="system.weapon_mod"> {{selectOptions config.weapon_mod selected=system.weapon_mod}}</select></td>
+     <td class="bold">Unique Modifier:</td>
+     <td><input name="system.mod" type="text" value="{{system.mod}}" data-dtype="Number"/></td>
+  </tr>
+   <tr>
+     <td class="bold">Damage Type:</td>
+     <td><select name="system.damage_type"> {{selectOptions config.damage_type selected=system.damage_type}}</select></td>
+    <td class="bold">Skill Type:</td>
+    <td><select name="system.s_type"> {{selectOptions config.s_type selected=system.s_type}}</select></td>
+    </tr>
+  <tr>
+      <td class="bold">Range: (ft.)</td>
+     <td><input name="system.range" type="text" value="{{system.range}}"/></td>
+     <td class="bold">Cooldown: (rounds)</td>
+     <td><input name="system.cooldown" type="text" value="{{system.cooldown}}" data-dtype="Number"/></td>
+  </tr>
+</table>
+ </div>
+     <div class="flexrow">
+<h2>Description</h2>
+</div>
+<div class="flexrow">
+ {{editor item.info target="system.info" button=true editable=editable}}
+</div>
+</form>

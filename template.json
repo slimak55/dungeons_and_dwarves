@@ -79,7 +79,7 @@
   "Item": {
   "types": ["melee_weapon", "spell","consumable","range_weapon","skills"],
   "melee_weapon":{
-    "damage":0,
+    "damage":"",
     "damage_type":"",
     "mod":0,
     "weapon_type":"",
@@ -92,9 +92,9 @@
     "rarity":""
   },
   "range_weapon":{
-    "damage":0,
+    "damage":"",
     "damage_type":"",
-    "mod":0,
+    "mod":"",
     "ammo_1":"",
     "ammo_2":"",
     "ammo_count_1":0,
@@ -106,15 +106,19 @@
     "cost":0,
     "cost_type":"",
     "quantity":0,
-    "rarity":""
+    "rarity":"",
+    "range":""
   },
   "spell":{
-    "damage":0,
+    "damage":"",
     "damage_type":"",
+    "weapon_mod":"",
     "mod":0,
-    "mana":0,
-    "s_type":"",
-    "info":"" 
+    "mana_cost":0,
+    "aoe":"",
+    "aoe_range":"",
+    "info":"" ,
+    "range":""
   },
   "consumable":{
     "effect":"",
@@ -126,11 +130,13 @@
     "rarity":""
   },
   "skills":{
-    "damage":0,
+    "damage":"",
+    "weapon_mod":"",
     "mod":0,
     "s_type":"",
     "info":"",
-    "cooldown":0
+    "cooldown":0,
+    "range":""
   }
 
   }
