@@ -27,7 +27,5 @@
   ],
   "gridDistance": 5,
   "gridUnit":"ft",
-  "initiative":"1d20 + @dex",
-  "primaryTokenAttribute": "resources.health",
-  "secondaryTokenAttribute": "resources.mana"
+  "initiative":"1d20 + @dex"
 }

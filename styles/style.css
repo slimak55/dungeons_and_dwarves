@@ -11,7 +11,8 @@ body {font-family: 'Young Serif', serif;}
 
 h1{background:linear-gradient(to right bottom, #000000, #302f30, #5c5c5d, #8c8d8e, #bfc2c2);
 	-webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
+  -webkit-text-fill-color: transparent;
+  border-bottom:0px; }
 
 h2{ font-size: 25px;
 	background: linear-gradient(to right top, #051937, #103a5f, #175f88, #1e87b0, #2bb1d6);
@@ -29,13 +30,16 @@ border-bottom:0px;}
 			border-radius:5px;
 			padding:10px;
 		text-align: center;}
-
+.table_size{display:block;
+			overflow:auto;
+				width:850px;
+				max-width: 850px;
+			}
 
 .table_shadow:hover{
 box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; }
 
 /*Overides*/
-
 .editor{ height:200px; }
 
 .editor-content:hover {border-radius:5px;
@@ -44,7 +48,53 @@ box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
 select:focus, input[type="text"]:focus, input[type="number"]:focus{ box-shadow: #165491 1px 0 10px;
 border-radius: 5px; };
 
+.tabs .item.active{text-shadow: #165491 1px 0 10px !important;}
+a.item.active{text-shadow: #165491 1px 0 10px !important;}
+a:hover{text-shadow: #165491 1px 0 10px !important;}
+
 /*Other*/
 
+.center{ justify-content: center !important;}
 
 .bold { font-weight: bold }
+
+/*Hover.css Open Source License */
+
+* Pulse */
+@-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  75% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}

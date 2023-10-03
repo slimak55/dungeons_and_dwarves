@@ -4,29 +4,25 @@
   "templates": {
     "abilities": {
     "str":{
+      "name":"Strength",
       "value": 10,
-      "proficient": 0,
-      "max": null
+      "proficient": false
       },
     "dex":{
       "value": 10,
-      "proficient": 0,
-      "max": null
+      "proficient": false
       },
     "int":{
       "value": 10,
-      "proficient": 0,
-      "max": null
+      "proficient": false
       },
     "cha":{
       "value": 10,
-      "proficient": 0,
-      "max": null
+      "proficient": false
       },
     "per":{
       "value": 10,
-      "proficient": 0,
-      "max": null
+      "proficient": false
       }
     },
     "attributes":{
@@ -48,10 +44,6 @@
             "max": null
           },
         "movement": {
-            "burrow": 0,
-            "climb": 0,
-            "fly": 0,
-            "swim": 0,
             "walk": 30,
             "units": "ft",
             "hover": false
@@ -70,14 +62,49 @@
           },
           "race":"",
           "class":""
-    }
+          
+    },
+    "notes":""
+},
+
+"PC": {
+
+  "templates": ["attributes","currency","details","notes","abilities"],
+  "dying": {
+    "isDying":false,
+    "success": 0,
+    "failure": 0
+  },
+    "appearance":"",
+    "pro_bonus":0,
+    "ac_bonus":0,
+    "hp_dice": {
+      "value":1,
+      "max":null
+    },
+    "hp_dice_type":"",
+    "mana_dice": {
+      "value":1,
+      "max":null
+    },
+     "mana_dice_type":"",
+     "level":0,
+     "xp":0
+},
+
+"NPC": {
+"templates":["notes","attributes"]
+},
+"Enemy": {
+
+  "templates":["notes","attributes","abilities"]
 }
 
 
 },
 
   "Item": {
-  "types": ["melee_weapon", "spell","consumable","range_weapon","skills"],
+  "types": ["melee_weapon", "spell","consumable","range_weapon","skills","armor"],
   "melee_weapon":{
     "damage":"",
     "damage_type":"",
@@ -137,6 +164,19 @@
     "info":"",
     "cooldown":0,
     "range":""
+  },
+  "armor":{
+
+    "info":"",
+    "armor_type":"",
+    "ac_armor":0,
+    "ac_mod":0,
+     "cost":0,
+    "cost_type":"",
+    "quantity":0,
+    "rarity":""
+
+
   }
 
   }

@@ -2,31 +2,27 @@
     <header class="sheet-header">
         <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
         <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+        <h1>AC:{{numberFormat system.ac_full}}</h1>
     </header>
    <div class="flexrow">
-    <h2 class="box_w">Weapon Info</h2>
+    <h2 class="box_w">Spell Info</h2>
       </div>
       <div class="flexrow">
     <table class="table_main table_shadow">
   <tr>
-    <td class="bold">Weapon Damage:</td>
-    <td><input name="system.damage" type="text" value="{{system.damage}}"/></td>
-     <td class="bold">Damage Modifier:</td>
-     <td><select name="system.weapon_mod"> {{selectOptions config.weapon_mod selected=system.weapon_mod}}</select></td>
+    <td class="bold">AC:</td>
+    <td><input name="system.ac_armor" type="text" value="{{system.ac_armor}}" data-dtype="Number"/></td>
      <td class="bold">Unique Modifier:</td>
-     <td><input name="system.mod" type="text" value="{{system.mod}}" data-dtype="Number"/></td>
+     <td><input name="system.ac_mod" type="text" value="{{system.ac_mod}}" data-dtype="Number"/></td>
+      <td class="bold">Armor Type:</td>
+     <td><select name="system.armor_type"> {{selectOptions config.armor_type selected=system.armor_type}}</select></td>
   </tr>
-  <tr>
-    <td class="bold">Weapon Type:</td>
-    <td><select name="system.weapon_type"> {{selectOptions config.weapon_type selected=system.weapon_type}}</select></td>
-    <td class="bold">Damage Type:</td>
-     <td><select name="system.damage_type"> {{selectOptions config.damage_type selected=system.damage_type}}</select></td>
+
+        <tr>
+     <td class="bold">Is Equiped?:</td>
+    <td><input type="checkbox" name="system.eq" {{checked system.eq}}></td>
   </tr>
     <tr>
-     <td class="bold">Is Equiped?:</td>
-    <td><input type="checkbox" name="{{system.eq}}" {{checked system.eq}}></td>
-  </tr>
-      <tr>
      <td class="bold">Quantity:</td>
     <td><input name="system.quantity" type="text" value="{{system.quantity}}" data-dtype="Number"/></td>
     <td class="bold">Cost:</td>

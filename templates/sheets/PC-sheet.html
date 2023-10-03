@@ -1,0 +1,133 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+        <table class="table_main table_shadow">
+            <tr>
+                <td><h2>Race</h2></td>
+                <td><h2>Class</h2></td>
+                 <td><h2>XP</h2></td>
+                  <td><h2>Level</h2></td>
+            </tr>
+            <tr>
+                <td width="150px"><input name="system.details.race" type="text" value="{{system.details.race}}"/></td>
+                <td width="150px"><input name="system.details.class" type="text" value="{{system.details.class}}"/></td>
+                <td width="100px"><input name="system.xp" type="text" value="{{system.xp}}" data-dtype="Number"/></td>
+                <td width="50px"><input name="system.level" type="text" value="{{system.level}}" data-dtype="Number"/></td>
+            </tr>
+
+        </table>
+    </header>
+<div class="flexrow">
+
+<div class="flexcol"></div>
+<div class="flexcol">
+    <table class="table_main table_shadow table_size">
+<col>
+  <colgroup span="3"></colgroup>
+  <colgroup span="3"></colgroup>
+    <colgroup span="2"></colgroup>
+    <tr>
+        <td colspan="3"><h3>HP</h3></td>
+        <td colspan="3"><h3>Mana</h3></td>
+        <td><h3>AC</h3></td>
+        <td colspan="2"><h3>Speed</h3></td>
+         <td><h3>Exhaust</h3></td>
+          <td><h3>Dying?</h3></td>
+    </tr>
+    <tr>
+        <td><input name="system.hp.value" type="number" value="{{system.hp.value}}" data-dtype="Number"/></td>
+        <td>/</td>
+       <td><input name="system.hp.max" type="number" value="{{system.hp.max}}" data-dtype="Number"/></td>
+        <td><input name="system.mana.value" type="number" value="{{system.mana.value}}" data-dtype="Number"/></td>
+        <td>/</td>
+        <td><input name="system.mana.max" type="number" value="{{system.mana.max}}" data-dtype="Number"/></td>
+        <td><h4>AC</h4></td>
+        <td><span style="display:flex"><h4>X</h4>s.</span></td>
+        <td><span style="display:flex"><input style="width: 75px" name="system.attributes.movement.walk" type="text" value="{{system.attributes.movement.walk}}" data-dtype="Number"/>ft.</span></td>
+                <td><input style="width:75px;" name="system.attributes.exhaust.value" type="text" value="{{system.attributes.exhaust.value}}" data-dtype="Number"/></td>
+        <td><input type="checkbox" name="{{system.dying.isDying}}" {{checked system.dying.isDying}}></td>
+
+    </tr>
+    </table>
+    <table class="table_main table_shadow table_size">
+    <col>
+    <colgroup span="4"></colgroup>
+    <colgroup span="4"></colgroup>
+    <tr>
+        <td colspan="4"><h3>HP Dice</h3></td>
+        <td colspan="4"><h3>Mana Dice</h3></td>
+    </tr>
+    <tr>
+        <td><input name="system.hp_dice.value" type="text" value="{{system.hp_dice.value}}" data-dtype="Number"/></td>
+        <td >/</td>
+        <td><label for="system.hp_dice.max"></label><input name="system.hp_dice.max" type="text" value="{{system.hp_dice.max}}" data-dtype="Number"/></td>
+        <td><select name="system.hp_dice_type"> {{selectOptions config.hp_dice_type selected=system.hp_dice_type}}</select></td>
+        <td><input  name="system.mana_dice.value" type="text" value="{{system.mana_dice.value}}" data-dtype="Number"/></td>
+        <td>/</td>
+         <td><input name="system.mana_dice.max" type="text" value="{{system.mana_dice.max}}"data-dtype="Number"/></td>
+        <td><select name="system.mana_dice_type">{{selectOptions config.mana_dice_type selected=system.mana_dice_type}}</select></td>
+
+    </tr>
+</table>
+    </div>
+<div class="flexcol"></div>
+
+</div>
+<div class="flexrow">
+    <div class="flexcol"></div>
+    <div class="flexcol">
+        <table class="table_main table_shadow table_size">
+        <tr></tr>
+        <tr>           
+                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.str.mod" data-label="Strength Roll">{{numberFormat system.abilities.str.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.dex.mod" data-label="Dexterity Roll">{{numberFormat system.abilities.dex.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.int.mod" data-label="Inteligence Roll">{{numberFormat system.abilities.int.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.cha.mod" data-label="Charisma Roll">{{numberFormat system.abilities.cha.mod}}</h1></td>
+                <td><h1></h1></td>
+                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.per.mod" data-label="Perception Roll">{{numberFormat system.abilities.per.mod}}</h1></td>
+
+        </tr>
+        <tr>
+            <td><input name="system.abilities.str.value" type="text" value="{{system.abilities.str.value}}" data-dtype="Number"/></td>
+            <td><input name="system.abilities.dex.value" type="text" value="{{system.abilities.dex.value}}" data-dtype="Number"/></td>
+            <td><input name="system.abilities.int.value" type="text" value="{{system.abilities.int.value}}" data-dtype="Number"/></td>
+            <td><input name="system.abilities.cha.value" type="text" value="{{system.abilities.cha.value}}" data-dtype="Number"/></td>
+            <td>-</td>
+            <td><input name="system.abilities.per.value" type="text" value="{{system.abilities.per.value}}" data-dtype="Number"/></td>
+        </tr>
+        <tr>
+                <td><h3>Strength</h3></td>
+                <td><h3>Dexterity</h3></td>
+                 <td><h3>Inteligence</h3></td>
+                  <td><h3>Charisma</h3></td>
+                   <td></td>
+                    <td><h3>Perception</h3></td>
+        </tr>
+        <tr>
+            <td><h3>Proficiency bonus:</h3></td>
+            <td><input name="system.pro_bonus" type="text" value="{{system.pro_bonus}}" data-dtype="Number"/></td>
+            <td><h3>AC bonus:</h3></td>
+            <td><input name="system.ac_bonus" type="text" value="{{system.ac_bonus}}" data-dtype="Number"/></td>
+
+
+        </tr>
+
+    </table>
+
+    </div>
+    <div class="flexcol"></div>
+</div>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="skills">Skills/Spells</a>
+    <a class="item" data-tab="ivnt">Gear & Inventory</a>
+    <a class="item" data-tab="bio">Biography</a>
+    <a class="item" data-tab="notes">Notes</a>
+  </nav>
+
+
+
+    </form>

@@ -89,3 +89,29 @@ dungeons_and_dwarves.s_type = {
 	passive:"Passive"
 
 }
+
+
+dungeons_and_dwarves.armor_type = {
+
+	light:"Light",
+	medium:"Medium",
+	heavy:"Heavy"
+
+}
+
+dungeons_and_dwarves.hp_dice_type = {
+
+	magic:"1d6",
+	dexter:"1d8",
+	warrior:"1d10",
+	mixed:"1d8"
+
+
+}
+dungeons_and_dwarves.mana_dice_type = {
+
+	magic:"1d12*25",
+	mixed:"1d8*25"
+
+
+}
