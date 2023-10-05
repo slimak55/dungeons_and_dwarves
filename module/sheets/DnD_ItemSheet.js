@@ -36,8 +36,11 @@ export default class DnD_ItemSheet extends ItemSheet {
     if (!this.isEditable) return;
 
     // Roll handlers, click handlers, etc. would go here.
+
   }
 
+
+	
 
 	
 }

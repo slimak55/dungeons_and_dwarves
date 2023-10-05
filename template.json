@@ -56,26 +56,22 @@
           "cp": 0
     },
     "details": {
-          "biography": {
-            "value": "",
-            "public": ""
-          },
           "race":"",
           "class":""
-          
     },
-    "notes":""
+    "notes":"",
+    "bio":"",
+    "appearance":""
 },
 
 "PC": {
 
-  "templates": ["attributes","currency","details","notes","abilities"],
+  "templates": ["attributes","currency","details","notes","abilities","appearance"],
   "dying": {
     "isDying":false,
     "success": 0,
     "failure": 0
   },
-    "appearance":"",
     "pro_bonus":0,
     "ac_bonus":0,
     "hp_dice": {
@@ -88,8 +84,11 @@
       "max":null
     },
      "mana_dice_type":"",
-     "level":0,
-     "xp":0
+      "levels": 1,
+      "xp": {
+          "value": 0
+        },
+        "inv_size":""
 },
 
 "NPC": {
@@ -104,7 +103,7 @@
 },
 
   "Item": {
-  "types": ["melee_weapon", "spell","consumable","range_weapon","skills","armor"],
+  "types": ["melee_weapon", "spell","consumable","range_weapon","skill","armor"],
   "melee_weapon":{
     "damage":"",
     "damage_type":"",
@@ -148,7 +147,7 @@
     "range":""
   },
   "consumable":{
-    "effect":"",
+    "damage":"",
     "c_type":"",
     "info":"",
     "cost":0,
@@ -156,7 +155,7 @@
     "quantity":0,
     "rarity":""
   },
-  "skills":{
+  "skill":{
     "damage":"",
     "weapon_mod":"",
     "mod":0,
@@ -174,6 +173,7 @@
      "cost":0,
     "cost_type":"",
     "quantity":0,
+    "eq":false,
     "rarity":""
 
 

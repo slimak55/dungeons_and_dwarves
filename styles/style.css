@@ -58,6 +58,15 @@ a:hover{text-shadow: #165491 1px 0 10px !important;}
 
 .bold { font-weight: bold }
 
+.m-right{ margin-right: 5px}
+
+input[type="text"].invi{ border-style: none;
+						border-width:0px;
+						background-color: transparent; }
+input[type="text"].invi:hover{ border-style: solid;
+						border-width:1px;
+						 }
+
 /*Hover.css Open Source License */
 
 * Pulse */

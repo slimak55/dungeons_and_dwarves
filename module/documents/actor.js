@@ -7,6 +7,8 @@ export class DnD_Actor extends Actor {
     // prepareDerivedData().
     super.prepareData();
   }
+
+
   prepareDerivedData() {
     const actorData = this;
     const systemData = actorData.system;
@@ -19,15 +21,26 @@ export class DnD_Actor extends Actor {
     this._prepareEnemyData(actorData);
   }
 
+  getLevelExp(level) {
+    const levels = CONFIG.dungeons_and_dwarves.CHARACTER_EXP_LEVELS;
+    return levels[Math.min(level, levels.length - 1)];
+  }
+
 _prepareCharacterData(actorData) {
 	if (actorData.type !== 'PC') return;
 
 	const systemData = actorData.system;
+  //Ability Modifiers
 	systemData.abilities.str.mod = Math.floor((systemData.abilities.str.value - 10) / 2);
 	systemData.abilities.dex.mod = Math.floor((systemData.abilities.dex.value - 10) / 2);
 	systemData.abilities.int.mod = Math.floor((systemData.abilities.int.value - 10) / 2);
 	systemData.abilities.cha.mod = Math.floor((systemData.abilities.cha.value - 10) / 2);
 	systemData.abilities.per.mod = Math.floor((systemData.abilities.per.value - 10) / 2);
+
+  //Movement seconds Math
+  systemData.attributes.movement.sec = systemData.attributes.movement.walk / 5;
+   
+
 
 }
 _prepareNpcData(actorData){}
