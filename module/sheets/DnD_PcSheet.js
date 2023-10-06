@@ -24,6 +24,7 @@ export default class DnD_PcSheet extends ActorSheet {
     		context.system = actorData.system;
     		context.flags = actorData.flags;
 			 context.config = CONFIG.dungeons_and_dwarves;
+			 context.items = actorData.items
 
 			 context.notes = await TextEditor.enrichHTML(this.object.system.notes, {async: true});
 
@@ -45,7 +46,6 @@ _prepareItems(context) {
 	const skills = [];
 	const eq_weapon = [];
 	const eq_armor =  [];
-	
 		
 
 
@@ -83,14 +83,12 @@ _prepareItems(context) {
       }
     }
 
+
     context.inv = inv;
     context.eq_armor = eq_armor;
     context.eq_weapon = eq_weapon;
     context.skills = skills;
-
-
 }
-
 
 	
  activateListeners(html) {
@@ -123,7 +121,21 @@ _prepareItems(context) {
 
     html.find('.rollable').click(this._onRoll.bind(this));
 
+    html.find(".item-toggle").click(this._onToggleItem.bind(this));
+
+    html.find('.in-edit-ammo1').change(this._onQuantityAmmo1Change.bind(this));
+
+     html.find('.in-edit-ammo2').change(this._onQuantityAmmo2Change.bind(this));
+
 	}
+
+  _onToggleItem(event) {
+    event.preventDefault();
+    const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    const attr = "system.eq";
+    return item.update({[attr]: !foundry.utils.getProperty(item, attr)});
+  }
 
 	_onChangeInputDelta(event) {
     const input = event.target;
@@ -144,6 +156,24 @@ _prepareItems(context) {
     const quantity = Math.max(0, parseInt(event.target.value));
     event.target.value = quantity;
     return item.update({"system.quantity": quantity});
+  }
+
+    async _onQuantityAmmo1Change(event) {
+    event.preventDefault();
+    const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    const quantity = Math.max(0, parseInt(event.target.value));
+    event.target.value = quantity;
+    return item.update({"system.ammo_count_1": quantity});
+  }
+
+    async _onQuantityAmmo2Change(event) {
+    event.preventDefault();
+    const itemId = event.currentTarget.closest(".item").dataset.itemId;
+    const item = this.actor.items.get(itemId);
+    const quantity = Math.max(0, parseInt(event.target.value));
+    event.target.value = quantity;
+    return item.update({"system.ammo_count_2": quantity});
   }
 
 
@@ -173,5 +203,6 @@ _prepareItems(context) {
       return roll;
     }
   }
+
 }
 

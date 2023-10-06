@@ -29,7 +29,7 @@ dungeons_and_dwarves.damage_type = {
 	slashing:"Slashing",
 	poison:"Poison",
 	acid:"Acid",
-	Fire:"Fire",
+	fire:"Fire",
 	cold:"Cold",
 	radiant:"Radiant",
 	necrotic:"Necrotic",
@@ -68,6 +68,7 @@ dungeons_and_dwarves.c_type = {
 	none:"",
 	supplies:"Supplies",
 	potion:"Potion",
+	key:"Key",
 	other:"Other"
 
 
@@ -102,9 +103,8 @@ dungeons_and_dwarves.armor_type = {
 dungeons_and_dwarves.hp_dice_type = {
 
 	magic:"1d6",
-	dexter:"1d8",
+	dexter_mix:"1d8",
 	warrior:"1d10",
-	mixed:"1d8"
 
 
 }
