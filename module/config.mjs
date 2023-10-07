@@ -111,6 +111,7 @@ dungeons_and_dwarves.hp_dice_type = {
 }
 dungeons_and_dwarves.mana_dice_type = {
 
+	none:"None",
 	magic:"1d12*25",
 	mixed:"1d8*25"
 

@@ -136,18 +136,16 @@
        <th>Range (tf.)</th>
        <th>Damage Type</th>
        <th>Type</th>
-       <th>Quantity</th>
        <th>Controls</th>
 
     </tr>
     {{#each inv as |item id|}}
     <tr class="item" data-item-id="{{item._id}}">
-        <td><span style="display:flex"><a class="rollable" data-roll="{{item.system.damage}} + @damage_roll "><img class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4>{{item.name}}</h4></span></td>
+        <td><span style="display:flex"><a class="rollable" data-roll="{{item.system.damage}} + {{item.system.mod}} "><img class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4>{{item.name}}</h4></span></td>
         <td>{{item.system.damage}}</td>
         <td>{{item.system.range}}</td>
         <td>{{item.system.damage_type}}</td>
         <td>{{item.type}}</td>
-        <td><input class="invi in-edit" style="width:50px;" name="item.system.quantity" type="text" value="{{item.system.quantity}}" data-dtype="Number" data-name="system.quantity"/></td>
         <td>
             <div class="item-controls">
                 <span  class="m-right"><a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a></span>
