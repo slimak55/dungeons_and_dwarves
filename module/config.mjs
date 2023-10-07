@@ -24,6 +24,7 @@ dungeons_and_dwarves.weapon_mod = {
 
 dungeons_and_dwarves.damage_type = {
 
+	none:"None",
 	bludgeoning:"Bludgeoning",
 	piercing:"Piercing",
 	slashing:"Slashing",
