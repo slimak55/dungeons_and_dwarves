@@ -69,6 +69,7 @@ dungeons_and_dwarves.c_type = {
 	supplies:"Supplies",
 	potion:"Potion",
 	key:"Key",
+	tool:"Tool",
 	other:"Other"
 
 
