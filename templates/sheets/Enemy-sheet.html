@@ -1,7 +1,7 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
         <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
-        <h1><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+        <h1 class="sheet"><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'Name' }}"/></h1>
     </header>
 <div class="flexrow">
 
@@ -13,16 +13,16 @@
   <colgroup span="3"></colgroup>
     <colgroup span="3"></colgroup>
     <tr>
-        <td colspan="3"><h3>HP</h3></td>
-        <td width="50px"><h3>AC</h3></td>
-        <td colspan="3"><h3>Speed</h3></td>
+        <td colspan="3"><h3 class="sheet">HP</h3></td>
+        <td width="50px"><h3 class="sheet">AC</h3></td>
+        <td colspan="3"><h3 class="sheet">Speed</h3></td>
     </tr>
     <tr>
         <td><input name="system.hp.value" type="text" value="{{system.hp.value}}" data-dtype="Number"/></td>
         <td>/</td>
        <td><input name="system.hp.max" type="text" value="{{system.hp.max}}" data-dtype="Number"/></td>
         <td><input name="system.attributes.ac" type="text" value="{{system.attributes.ac}}" data-dtype="Number"/></td>
-        <td style="width:50px;"><span style="display:flex; justify-content:center; text-align:center;"><h4>{{numberFormat system.attributes.movement.sec}}</h4> s.</span></td>
+        <td style="width:50px;"><span style="display:flex; justify-content:center; text-align:center;"><h4 class="sheet">{{numberFormat system.attributes.movement.sec}}</h4> s.</span></td>
         <td style="width:10px">&nbsp</td>
         <td><span style="display:flex;"><input style="width: 50px" name="system.attributes.movement.walk" type="text" value="{{system.attributes.movement.walk}}" data-dtype="Number"/>ft.</span></td>
     </tr>
@@ -32,25 +32,25 @@
     <div class="flexcol">
         <table class="table_main table_shadow table_size">
                 <tr><td>&nbsp</td>
-                <td><h3>Strength</h3></td>
-                <td><h3>Dexterity</h3></td>
-                 <td><h3>Inteligence</h3></td>
-                  <td><h3>Charisma</h3></td>
+                <td><h3 class="sheet">Strength</h3></td>
+                <td><h3 class="sheet">Dexterity</h3></td>
+                 <td><h3 class="sheet">Inteligence</h3></td>
+                  <td><h3 class="sheet">Charisma</h3></td>
                    <td width="10px">&nbsp</td>
-                    <td><h3>Perception</h3></td>
+                    <td><h3 class="sheet">Perception</h3></td>
         </tr>
         <tr>      
-                <td><h3>Modifier:</h3></td>    
-                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.str.mod" data-label="Strength Roll">{{numberFormat system.abilities.str.mod}}</h1></td>
-                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.dex.mod" data-label="Dexterity Roll">{{numberFormat system.abilities.dex.mod}}</h1></td>
-                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.int.mod" data-label="Inteligence Roll">{{numberFormat system.abilities.int.mod}}</h1></td>
-                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.cha.mod" data-label="Charisma Roll">{{numberFormat system.abilities.cha.mod}}</h1></td>
+                <td><h3 class="sheet">Modifier:</h3></td>    
+                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.str.mod" data-label="Strength Roll">{{numberFormat system.abilities.str.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.dex.mod" data-label="Dexterity Roll">{{numberFormat system.abilities.dex.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.int.mod" data-label="Inteligence Roll">{{numberFormat system.abilities.int.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.cha.mod" data-label="Charisma Roll">{{numberFormat system.abilities.cha.mod}}</h1></td>
                 <td>&nbsp</td>
-                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.per.mod" data-label="Perception Roll">{{numberFormat system.abilities.per.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.per.mod" data-label="Perception Roll">{{numberFormat system.abilities.per.mod}}</h1></td>
 
         </tr>
         <tr>
-            <td><h3>Value:</h3></td> 
+            <td><h3 class="sheet">Value:</h3></td> 
             <td><input name="system.abilities.str.value" type="text" value="{{system.abilities.str.value}}" data-dtype="Number"/></td>
             <td><input name="system.abilities.dex.value" type="text" value="{{system.abilities.dex.value}}" data-dtype="Number"/></td>
             <td><input name="system.abilities.int.value" type="text" value="{{system.abilities.int.value}}" data-dtype="Number"/></td>
@@ -118,7 +118,7 @@
 
 <div class="tab ivnt" data-group="primary" data-tab="ivnt">
 
-    <h2>Inventory</h2>
+    <h2 class="sheet">Inventory</h2>
        
 <table class="table_main table_shadow">
     <tr>

@@ -1,10 +1,10 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
         <img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/>
-        <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+        <h1 class="sheet"><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
     </header>
    <div class="flexrow">
-    <h2>Basic Effects and Info</h2>
+    <h2 class="sheet">Basic Effects and Info</h2>
       </div>
        <div class="flexrow">
       <table class="table_main table_shadow">
@@ -27,7 +27,7 @@
  </div>
 
      <div class="flexrow">
-<h2>Effects or Description</h2>
+<h2 class="sheet">Effects or Description</h2>
 </div>
 <div class="flexrow">
  {{editor item.info target="system.info" button=true editable=editable}}

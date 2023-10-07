@@ -1,13 +1,13 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
         <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
-        <h1><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+        <h1 class="sheet"><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'Name' }}"/></h1>
         <table class="table_main table_shadow">
             <tr>
-                <td><h2>Race</h2></td>
-                <td><h2>Class</h2></td>
-                 <td><h2>XP</h2></td>
-                  <td><h2>Level</h2></td>
+                <td><h2 class="sheet">Race</h2></td>
+                <td><h2 class="sheet">Class</h2></td>
+                 <td><h2 class="sheet">XP</h2></td>
+                  <td><h2 class="sheet">Level</h2></td>
             </tr>
             <tr>
                 <td width="150px"><input name="system.details.race" type="text" value="{{system.details.race}}"/></td>
@@ -23,7 +23,7 @@
 
     <table class="table_main table_shadow">
         <tr>
-            <td><h2>Money</h2></td>
+            <td><h2 class="sheet">Money</h2></td>
 
         </tr>
         <tr><td>Platinum</td></tr>
@@ -50,13 +50,13 @@
   <colgroup span="3"></colgroup>
     <colgroup span="3"></colgroup>
     <tr>
-        <td colspan="3"><h3>HP</h3></td>
-        <td colspan="3"><h3>Mana</h3></td>
-        <td width="50px"><h3>AC</h3></td>
-        <td colspan="3"><h3>Speed</h3></td>
+        <td colspan="3"><h3 class="sheet">HP</h3></td>
+        <td colspan="3"><h3 class="sheet">Mana</h3></td>
+        <td width="50px"><h3 class="sheet">AC</h3></td>
+        <td colspan="3"><h3 class="sheet">Speed</h3></td>
         <td>&nbsp</td>
-         <td><h3>Exhaust</h3></td>
-          <td><h3>Dying?</h3></td>
+         <td><h3 class="sheet">Exhaust</h3></td>
+          <td><h3 class="sheet">Dying?</h3></td>
     </tr>
     <tr>
         <td><input name="system.hp.value" type="text" value="{{system.hp.value}}" data-dtype="Number"/></td>
@@ -65,7 +65,7 @@
         <td><input name="system.mana.value" type="text" value="{{system.mana.value}}" data-dtype="Number"/></td>
         <td>/</td>
         <td><input name="system.mana.max" type="text" value="{{system.mana.max}}" data-dtype="Number"/></td>
-        <td><h4>{{system.attributes.ac}}</h4></td>
+        <td><h4 class="sheet">{{system.attributes.ac}}</h4></td>
         <td><span style="display:flex"><h4>{{numberFormat system.attributes.movement.sec}}</h4> s.</span></td>
         <td>&nbsp</td>
         <td><span style="display:flex"><input style="width: 50px" name="system.attributes.movement.walk" type="text" value="{{system.attributes.movement.walk}}" data-dtype="Number"/>ft.</span></td>
@@ -81,8 +81,8 @@
     <colgroup span="4"></colgroup>
     <colgroup span="4"></colgroup>
     <tr>
-        <td colspan="4"><h3>HP Dice</h3></td>
-        <td colspan="4"><h3>Mana Dice</h3></td>
+        <td colspan="4"><h3 class="sheet">HP Dice</h3></td>
+        <td colspan="4"><h3 class="sheet">Mana Dice</h3></td>
     </tr>
     <tr>
         <td><input name="system.hp_dice.value" type="text" value="{{system.hp_dice.value}}" data-dtype="Number"/></td>
@@ -105,25 +105,25 @@
     <div class="flexcol">
         <table class="table_main table_shadow table_size">
                 <tr><td>&nbsp</td>
-                <td><h3>Strength</h3></td>
-                <td><h3>Dexterity</h3></td>
-                 <td><h3>Inteligence</h3></td>
-                  <td><h3>Charisma</h3></td>
+                <td><h3 class="sheet">Strength</h3></td>
+                <td><h3 class="sheet">Dexterity</h3></td>
+                 <td><h3 class="sheet">Inteligence</h3></td>
+                  <td><h3 class="sheet">Charisma</h3></td>
                    <td width="10px">&nbsp</td>
-                    <td><h3>Perception</h3></td>
+                    <td><h3 class="sheet">Perception</h3></td>
         </tr>
         <tr>      
-                <td><h3>Modifier:</h3></td>    
-                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.str.mod" data-label="Strength Roll">{{numberFormat system.abilities.str.mod}}</h1></td>
-                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.dex.mod" data-label="Dexterity Roll">{{numberFormat system.abilities.dex.mod}}</h1></td>
-                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.int.mod" data-label="Inteligence Roll">{{numberFormat system.abilities.int.mod}}</h1></td>
-                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.cha.mod" data-label="Charisma Roll">{{numberFormat system.abilities.cha.mod}}</h1></td>
+                <td><h3 class="sheet">Modifier:</h3></td>    
+                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.str.mod" data-label="Strength Roll">{{numberFormat system.abilities.str.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.dex.mod" data-label="Dexterity Roll">{{numberFormat system.abilities.dex.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.int.mod" data-label="Inteligence Roll">{{numberFormat system.abilities.int.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.cha.mod" data-label="Charisma Roll">{{numberFormat system.abilities.cha.mod}}</h1></td>
                 <td>&nbsp</td>
-                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.per.mod" data-label="Perception Roll">{{numberFormat system.abilities.per.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.per.mod" data-label="Perception Roll">{{numberFormat system.abilities.per.mod}}</h1></td>
 
         </tr>
         <tr>
-            <td><h3>Proficient:</h3></td>
+            <td><h3 class="sheet">Proficient:</h3></td>
             <td><input type="checkbox" name="system.abilities.str.proficient" {{checked system.abilities.str.proficient}}></td>
             <td><input type="checkbox" name="system.abilities.dex.proficient" {{checked system.abilities.dex.proficient}}></td>
             <td><input type="checkbox" name="system.abilities.int.proficient" {{checked system.abilities.int.proficient}}></td>
@@ -133,7 +133,7 @@
 
         </tr>
         <tr>
-            <td><h3>Value:</h3></td> 
+            <td><h3 class="sheet">Value:</h3></td> 
             <td><input name="system.abilities.str.value" type="text" value="{{system.abilities.str.value}}" data-dtype="Number"/></td>
             <td><input name="system.abilities.dex.value" type="text" value="{{system.abilities.dex.value}}" data-dtype="Number"/></td>
             <td><input name="system.abilities.int.value" type="text" value="{{system.abilities.int.value}}" data-dtype="Number"/></td>
@@ -142,9 +142,9 @@
             <td><input name="system.abilities.per.value" type="text" value="{{system.abilities.per.value}}" data-dtype="Number"/></td>
         </tr>
         <tr>
-            <td><h3>Proficiency bonus:</h3></td>
+            <td><h3 class="sheet">Proficiency bonus:</h3></td>
             <td><input name="system.pro_bonus" type="text" value="{{system.pro_bonus}}" data-dtype="Number"/></td>
-            <td><h3>AC bonus:</h3></td>
+            <td><h3 class="sheet">AC bonus:</h3></td>
             <td><input name="system.ac_bonus" type="text" value="{{system.ac_bonus}}" data-dtype="Number"/></td>
 
 
@@ -184,7 +184,7 @@
     </tr>
     {{#each skills as |item id|}}
     <tr class="item" data-item-id="{{item._id}}">
-        <td><span style="display:flex;" class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod + {{item.system.mod}}"><img class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4>{{item.name}}</h4></span></td>
+        <td><span style="display:flex;" class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod + {{item.system.mod}}"><img class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4 class="sheet">{{item.name}}</h4></span></td>
         <td>{{item.system.damage}}</td>
         <td>{{item.system.weapon_mod}}</td>
         <td>{{item.system.range}}</td>
@@ -210,7 +210,7 @@
 
 
 <div class="tab ivnt" data-group="primary" data-tab="ivnt">
-<h2>Equiped Weapons</h2>
+<h2 class="sheet">Equiped Weapons</h2>
 
 <table class="table table_main table_shadow items-list">
     <tr>
@@ -226,7 +226,7 @@
     </tr>
     {{#each eq_weapon as |item id|}}
     <tr class="item" data-item-id="{{item._id}}">
-        <td><span style="display:flex"><a class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod + {{item.system.mod}} "><img  class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4>{{item.name}}</h4></span></td>
+        <td><span style="display:flex"><a class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod + {{item.system.mod}} "><img  class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4 class="sheet">{{item.name}}</h4></span></td>
         <td>{{item.system.damage}}</td>
         <td>{{item.system.weapon_mod}}</td>
         <td>{{item.system.range}}</td>
@@ -246,7 +246,7 @@
      {{/each}}
 
 </table>
-<h2>Equiped Armor</h2>
+<h2 class="sheet">Equiped Armor</h2>
 
 <table class="table table_main table_shadow items-list">
     <tr>
@@ -258,7 +258,7 @@
     </tr>
     {{#each eq_armor as |item id|}}
     <tr class="item" data-item-id="{{item._id}}">
-        <td><span style="display:flex"><a class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod "><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4>{{item.name}}</h4></span></td>
+        <td><span style="display:flex"><a class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod "><img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4 class="sheet">{{item.name}}</h4></span></td>
         <td class="ac_armor">{{item.system.ac_full}}</td>
         <td>{{item.system.armor_type}}</td>
         <td>
@@ -274,7 +274,7 @@
 
 </table>
 
-    <h2>Inventory</h2>
+    <h2 class="sheet">Inventory</h2>
 <select name="system.inv_size">{{selectOptions config.inv_size selected=system.inv_size}}</select>
 
 <table class="table table_main table_shadow items-list">
@@ -289,7 +289,7 @@
     </tr>
     {{#each inv as |item id|}}
     <tr class="item" data-item-id="{{item._id}}">
-        <td><span style="display:flex"><a class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod "><img class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4>{{item.name}}</h4></span></td>
+        <td><span style="display:flex"><a class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod "><img class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4 class="sheet">{{item.name}}</h4></span></td>
         <td>{{item.type}}</td>
         <td><input class="invi in-edit" style="width:50px;" name="item.system.quantity" type="text" value="{{item.system.quantity}}" data-dtype="Number" data-name="system.quantity"/></td>
         <td>{{item.system.cost}} {{item.system.cost_type}}</td>
@@ -308,9 +308,10 @@
 
  </div>
 <div class="tab bio" data-group="primary" data-tab="bio"> 
-    <h2>Biography</h2>
+    <h2 class="sheet">Biography</h2>
      {{editor actor_bio target="system.bio" button=true editable=editable}}
-     <h2>Appearance</h2>
+    <h2 class="sheet">Biography</h2>
+     <h2 >Appearance</h2>
      {{editor appearance target="system.appearance" button=true editable=editable}}
 
 

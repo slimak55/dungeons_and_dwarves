@@ -9,17 +9,17 @@ body {font-family: 'Young Serif', serif;}
 
 /*Headers*/
 
-h1{background:linear-gradient(to right bottom, #000000, #302f30, #5c5c5d, #8c8d8e, #bfc2c2);
+h1.sheet{background:linear-gradient(to right bottom, #000000, #302f30, #5c5c5d, #8c8d8e, #bfc2c2);
 	-webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-bottom:0px; }
 
-h2{ font-size: 25px;
+h2.sheet{ font-size: 25px;
 	background: linear-gradient(to right top, #051937, #103a5f, #175f88, #1e87b0, #2bb1d6);
 	-webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-bottom:0px; }
-h3{ background: radial-gradient(circle, #fd0000, #ca0313, #980c17, #671016, #390f0f););
+h3.sheet{ background: radial-gradient(circle, #fd0000, #ca0313, #980c17, #671016, #390f0f););
 	-webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 border-bottom:0px;}
