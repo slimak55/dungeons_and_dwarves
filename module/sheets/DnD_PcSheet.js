@@ -28,7 +28,7 @@ export default class DnD_PcSheet extends ActorSheet {
 
 			 context.notes = await TextEditor.enrichHTML(this.object.system.notes, {async: true});
 
-			 context.actor.bio = await TextEditor.enrichHTML(this.object.system.bio, {async: true});
+			 context.actor_bio = await TextEditor.enrichHTML(this.object.system.bio, {async: true});
 			 context.appearance = await TextEditor.enrichHTML(this.object.system.appearance, {async: true});
 
 			if (actorData.type == 'PC') {
@@ -36,6 +36,10 @@ export default class DnD_PcSheet extends ActorSheet {
       //this._prepareCharacterData(context);
     }
 
+    	if (actorData.type == 'Enemy') {
+      this._prepareEnemyItems(context);
+      //this._prepareCharacterData(context);
+    }
  
 			 return context;
 
@@ -89,6 +93,38 @@ _prepareItems(context) {
     context.eq_weapon = eq_weapon;
     context.skills = skills;
 }
+
+_prepareEnemyItems(context) {
+
+	const inv = [];
+	const skills = [];
+
+	for (let i of context.items) {
+
+      i.img = i.img || DEFAULT_TOKEN;
+      // Append to weapons.
+      if (i.type === 'melee_weapon' || i.type === 'range_weapon') {
+
+      		inv.push(i);
+      }
+       // Append to spells.
+      else if (i.type === 'spell' || i.type === 'skill') { 
+          skills.push(i);
+      }
+      // Append to consumable.
+      else if (i.type === 'consumable') {
+        inv.push(i);
+      }
+    }
+
+
+
+
+
+
+	 context.inv = inv;
+	 context.skills = skills;
+	}
 
 	
  activateListeners(html) {

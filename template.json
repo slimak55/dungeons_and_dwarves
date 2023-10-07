@@ -92,7 +92,8 @@
 },
 "Enemy": {
 
-  "templates":["notes","attributes","abilities"]
+  "templates":["notes","attributes","abilities"],
+  "hit_roll":""
 }
 
 

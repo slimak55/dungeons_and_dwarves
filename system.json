@@ -2,11 +2,11 @@
   "id": "dungeons_and_dwarves",
   "title": "Dungeons & Dwarves",
   "description": "System for DnD 5e variations Dungeons & Dwarves",
-  "version": "0.5.0",
+  "version": "0.7.0",
   "compatibility": {
     "minimum": "11",
     "verified": "11.313",
-    "maximum": "11"
+    "maximum": ""
   },
   "url": "https://github.com/slimak55/dungeons_and_dwarves",
    "manifest": "https://raw.githubusercontent.com/slimak55/dungeons_and_dwarves/main/system.json",

@@ -1,0 +1,171 @@
+<form class="{{cssClass}}" autocomplete="off">
+    <header class="sheet-header">
+        <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
+        <h1><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+    </header>
+<div class="flexrow">
+
+<div class="flexcol"></div>
+<div class="flexcol">
+    <table class="table_main table_shadow">
+<col>
+  <colgroup span="3"></colgroup>
+  <colgroup span="3"></colgroup>
+    <colgroup span="3"></colgroup>
+    <tr>
+        <td colspan="3"><h3>HP</h3></td>
+        <td width="50px"><h3>AC</h3></td>
+        <td colspan="3"><h3>Speed</h3></td>
+    </tr>
+    <tr>
+        <td><input name="system.hp.value" type="text" value="{{system.hp.value}}" data-dtype="Number"/></td>
+        <td>/</td>
+       <td><input name="system.hp.max" type="text" value="{{system.hp.max}}" data-dtype="Number"/></td>
+        <td><input name="system.attributes.ac" type="text" value="{{system.attributes.ac}}" data-dtype="Number"/></td>
+        <td style="width:50px;"><span style="display:flex; justify-content:center; text-align:center;"><h4>{{numberFormat system.attributes.movement.sec}}</h4> s.</span></td>
+        <td style="width:10px">&nbsp</td>
+        <td><span style="display:flex;"><input style="width: 50px" name="system.attributes.movement.walk" type="text" value="{{system.attributes.movement.walk}}" data-dtype="Number"/>ft.</span></td>
+    </tr>
+    </table>
+<div class="flexrow">
+    <div class="flexcol"></div>
+    <div class="flexcol">
+        <table class="table_main table_shadow table_size">
+                <tr><td>&nbsp</td>
+                <td><h3>Strength</h3></td>
+                <td><h3>Dexterity</h3></td>
+                 <td><h3>Inteligence</h3></td>
+                  <td><h3>Charisma</h3></td>
+                   <td width="10px">&nbsp</td>
+                    <td><h3>Perception</h3></td>
+        </tr>
+        <tr>      
+                <td><h3>Modifier:</h3></td>    
+                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.str.mod" data-label="Strength Roll">{{numberFormat system.abilities.str.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.dex.mod" data-label="Dexterity Roll">{{numberFormat system.abilities.dex.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.int.mod" data-label="Inteligence Roll">{{numberFormat system.abilities.int.mod}}</h1></td>
+                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.cha.mod" data-label="Charisma Roll">{{numberFormat system.abilities.cha.mod}}</h1></td>
+                <td>&nbsp</td>
+                <td><h1 class="rollable hvr-pulse" data-roll="d20+@abilities.per.mod" data-label="Perception Roll">{{numberFormat system.abilities.per.mod}}</h1></td>
+
+        </tr>
+        <tr>
+            <td><h3>Value:</h3></td> 
+            <td><input name="system.abilities.str.value" type="text" value="{{system.abilities.str.value}}" data-dtype="Number"/></td>
+            <td><input name="system.abilities.dex.value" type="text" value="{{system.abilities.dex.value}}" data-dtype="Number"/></td>
+            <td><input name="system.abilities.int.value" type="text" value="{{system.abilities.int.value}}" data-dtype="Number"/></td>
+            <td><input name="system.abilities.cha.value" type="text" value="{{system.abilities.cha.value}}" data-dtype="Number"/></td>
+            <td>&nbsp</td>
+            <td><input name="system.abilities.per.value" type="text" value="{{system.abilities.per.value}}" data-dtype="Number"/></td>
+        </tr>
+    </table>
+
+    </div>
+</div>
+</div>
+<div class="flexcol"></div>
+</div>
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    {{!-- Default tab is specified in actor-sheet.mjs --}}
+    <a class="item" data-tab="skills">Skills/Spells</a>
+    <a class="item" data-tab="ivnt">Inventory</a>
+    <a class="item" data-tab="notes">Notes</a>
+  </nav>
+
+  <section class="sheet-body">
+<div class="tab skills" data-group="primary" data-tab="skills"> 
+
+    <table class="table table_main table_shadow items-list">
+    <tr>
+       <th style="text-align:left;">Name</th> 
+       <th>Damage</th>
+       <th>Damage Modifier</th>
+       <th>Range (tf.)</th>
+       <th>AoE</th>
+       <th>Damage Type</th>
+       <th>Mana</th>
+       <th>Skill / Spell Type</th>
+       <th>Controls</th>
+
+    </tr>
+    {{#each skills as |item id|}}
+    <tr class="item" data-item-id="{{item._id}}">
+        <td><span style="display:flex;" class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod + {{item.system.mod}}"><img class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4>{{item.name}}</h4></span></td>
+        <td>{{item.system.damage}}</td>
+        <td>{{item.system.weapon_mod}}</td>
+        <td>{{item.system.range}}</td>
+        <td>{{item.system.aoe}} - {{item.system.aoe_range}}tf.</td>
+        <td>{{item.system.damage_type}}</td>
+         <td>{{item.system.mana_cost}}</td>
+         <td>{{item.system.s_type}}</td>
+
+        <td>
+            <div class="item-controls">
+                <span  class="m-right"><a class="item-control item-edit" title="Edit Item">
+                    <i class="fas fa-edit"></i></a></span><span><a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                    </span>
+                </div>
+        </td>
+        </tr>
+     {{/each}}
+
+</table>
+
+
+</div>
+
+
+<div class="tab ivnt" data-group="primary" data-tab="ivnt">
+
+    <h2>Inventory</h2>
+       
+<table class="table_main table_shadow">
+    <tr>
+       <th>Hit Modifier</th>
+    </tr>
+    <tr>
+        <td><a class="rollable hvr-pulse" data-roll=" 1d20 + {{system.hit_roll}} "><i class="fa-solid fa-dice-d20"></i></a><input class="invi" style="width:50px;" name="system.hit_roll" type="text" value="{{system.hit_roll}}" data-dtype="text"/></td>
+    </tr>
+      
+</table>
+<table class="table table_main table_shadow items-list">
+    <tr>
+       <th style="text-align:left;">Name</th>
+       <th>Damage Roll</th>
+       <th>Range (tf.)</th>
+       <th>Damage Type</th>
+       <th>Type</th>
+       <th>Quantity</th>
+       <th>Controls</th>
+
+    </tr>
+    {{#each inv as |item id|}}
+    <tr class="item" data-item-id="{{item._id}}">
+        <td><span style="display:flex"><a class="rollable" data-roll="{{item.system.damage}} + @damage_roll "><img class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4>{{item.name}}</h4></span></td>
+        <td>{{item.system.damage}}</td>
+        <td>{{item.system.range}}</td>
+        <td>{{item.system.damage_type}}</td>
+        <td>{{item.type}}</td>
+        <td><input class="invi in-edit" style="width:50px;" name="item.system.quantity" type="text" value="{{item.system.quantity}}" data-dtype="Number" data-name="system.quantity"/></td>
+        <td>
+            <div class="item-controls">
+                <span  class="m-right"><a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a></span>
+                    <span><a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a></span>
+                </div>
+        </td>
+        </tr>
+     {{/each}}
+
+</table>
+
+ </div>
+
+<div class="tab notes" data-group="primary" data-tab="notes"> 
+
+     {{editor notes target="system.notes" button=true editable=editable}}
+
+</div>
+
+</section>
+    </form>

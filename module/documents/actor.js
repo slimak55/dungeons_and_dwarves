@@ -125,7 +125,17 @@ _prepareCharacterData(actorData) {
 
 }
 _prepareNpcData(actorData){}
-_prepareEnemyData(actorData){}
+_prepareEnemyData(actorData){ 
+    if (actorData.type !== 'Enemy') return;
+    const systemData = actorData.system;
+
+  systemData.abilities.str.mod = Math.floor((systemData.abilities.str.value - 10) / 2);
+  systemData.abilities.dex.mod = Math.floor((systemData.abilities.dex.value - 10) / 2);
+  systemData.abilities.int.mod = Math.floor((systemData.abilities.int.value - 10) / 2);
+  systemData.abilities.cha.mod = Math.floor((systemData.abilities.cha.value - 10) / 2);
+  systemData.abilities.per.mod = Math.floor((systemData.abilities.per.value - 10) / 2);
+  systemData.attributes.movement.sec = systemData.attributes.movement.walk / 5;
+}
 
 
 
