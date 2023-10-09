@@ -10,7 +10,7 @@
   },
   "url": "https://github.com/slimak55/dungeons_and_dwarves",
    "manifest": "https://raw.githubusercontent.com/slimak55/dungeons_and_dwarves/main/system.json",
-   "download": "https://github.com/slimak55/dungeons_and_dwarves/archive/refs/tags/dungeons_and_dwarves-release_0.7.5.zip",
+   "download": "https://github.com/slimak55/dungeons_and_dwarves/releases/download/release_0.7.5/dungeons_and_dwarves-release_0.7.5.zip",
   "esmodules": ["dwarves.js"],
   "styles": [
     "styles/style.css"
