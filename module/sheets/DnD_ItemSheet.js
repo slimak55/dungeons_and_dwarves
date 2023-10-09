@@ -1,6 +1,6 @@
 export default class DnD_ItemSheet extends ItemSheet {
 	get template() {
-		return `systems/dungeons_and_dwarves/templates/sheets/${this.item.type}-sheet.html`; }
+		return `systems/dungeons-and-dwarves/templates/sheets/${this.item.type}-sheet.html`; }
 
 		static get defaultOptions() {
     return mergeObject(super.defaultOptions, {

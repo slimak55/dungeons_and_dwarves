@@ -1,6 +1,6 @@
 export default class DnD_PcSheet extends ActorSheet {
 	get template() {
-		return `systems/dungeons_and_dwarves/templates/sheets/${this.actor.type}-sheet.html`; }
+		return `systems/dungeons-and-dwarves/templates/sheets/${this.actor.type}-sheet.html`; }
 
 		static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
