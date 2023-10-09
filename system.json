@@ -2,7 +2,7 @@
   "id": "dungeons_and_dwarves",
   "title": "Dungeons & Dwarves",
   "description": "System for DnD 5e variations Dungeons & Dwarves",
-  "version": "0.7.0",
+  "version": "0.7.5",
   "compatibility": {
     "minimum": "11",
     "verified": "11.313",

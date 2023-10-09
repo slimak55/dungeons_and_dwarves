@@ -4,7 +4,7 @@
         <h1 class="sheet"><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
     </header>
    <div class="flexrow">
-    <h2 class="box_w" sheet>Spell Info</h2>
+    <h2 class="box_w sheet">Spell Info</h2>
       </div>
       <div class="flexrow">
     <table class="table_main table_shadow">
@@ -21,8 +21,12 @@
      <td><select name="system.damage_type"> {{selectOptions config.damage_type selected=system.damage_type}}</select></td>
     <td class="bold">Mana Cost:</td>
     <td><input name="system.mana_cost" type="text" value="{{system.mana_cost}}" data-dtype="Number"/></td>
-      <td class="bold">Skill Type:</td>
+      <td class="bold">Spell Type:</td>
     <td><select name="system.s_type"> {{selectOptions config.s_type selected=system.s_type}}</select></td>
+    </tr>
+    <tr>
+      <td class="bold">Spell Level:</td>
+      <td><select name="system.s_level"> {{selectOptions config.s_level selected=system.s_level}}</select></td>
     </tr>
   <tr>
       <td class="bold">Range: (ft.)</td>
@@ -31,6 +35,10 @@
       <td><select name="system.aoe"> {{selectOptions config.aoe selected=system.aoe}}</select></td>
       <td class="bold">AoE Range: (tf.)</td>
       <td><input name="system.aoe_range" type="text" value="{{system.aoe_range}}"/></td>
+  </tr>
+  <tr>
+    <td class="bold">Cast time (actions)</td>
+    <td><input name="system.cast_time" type="text" value="{{system.cast_time}}" data-dtype="Number"/></td>
   </tr>
 </table>
  </div>

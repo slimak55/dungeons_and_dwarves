@@ -134,3 +134,10 @@ dungeons_and_dwarves.inv_size = {
 
 
 }
+dungeons_and_dwarves.s_level = {
+
+	normal:"Normal",
+	expert:"Expert",
+	profesional:"Profesional"
+
+}

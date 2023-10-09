@@ -142,6 +142,8 @@
     "aoe_range":"",
     "info":"" ,
     "s_type":"",
+    "s_level":"",
+    "cast_time":1,
     "range":""
   },
   "consumable":{
