@@ -1,162 +1,189 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
         <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
-        <h1 class="sheet"><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'Name' }}"/></h1>
-        <table class="table_main table_shadow">
-            <tr>
+        <h1 class=""><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+        <table class="table_main table-color no_color">
+            <tr height="35px">
                 <td><h2 class="sheet">Race</h2></td>
                 <td><h2 class="sheet">Class</h2></td>
                  <td><h2 class="sheet">XP</h2></td>
                   <td><h2 class="sheet">Level</h2></td>
             </tr>
             <tr>
-                <td width="150px"><input name="system.details.race" type="text" value="{{system.details.race}}"/></td>
-                <td width="150px"><input name="system.details.class" type="text" value="{{system.details.class}}"/></td>
-                <td width="100px"><input name="system.xp.value" type="text" value="{{system.xp.value}}" data-dtype="Number"/>/ {{system.xp.max}}</td>
-                <td width="50px"><input name="system.levels" type="text" value="{{system.levels}}" data-dtype="Number"/></td>
+                <td width="150px"><input class="invi" name="system.details.race" type="text" value="{{system.details.race}}"/></td>
+                <td width="150px"><input class="invi" name="system.details.class" type="text" value="{{system.details.class}}"/></td>
+                <td width="100px"><input class="invi" name="system.xp.value" type="text" value="{{system.xp.value}}" data-dtype="Number"/>/ {{system.xp.max}}</td>
+                <td width="50px"><input class="invi" name="system.levels" type="text" value="{{system.levels}}" data-dtype="Number"/></td>
             </tr>
 
         </table>
     </header>
-<div class="flexrow">
-   <div class="flexcol">
 
-    <table class="table_main table_shadow">
-        <tr>
-            <td><h2 class="sheet">Money</h2></td>
+    <!-- Main Div -->
+        <div class="flexrow">
+           <!-- Money Col -->  
+           <div class="flexcol flex0">
+                <table class="table_main table_shadow only_alt table_side">
+                    <tr>
+                        <td><h2 class="sheet">Money</h2></td>
+                    </tr>
+                    <tr><td>Platinum</td></tr>
+                    <tr><td><input class="invi" name="system.currency.pp" type="text" value="{{system.currency.pp}}" data-dtype="Number"/></td></tr>
+                    <tr><td>Gold</td></tr>
+                    <tr><td><input class="invi" name="system.currency.gp" type="text" value="{{system.currency.gp}}" data-dtype="Number"/></td></tr>
+                    <tr><td>Silver</td></tr>
+                    <tr><td><input class="invi" name="system.currency.sp" type="text" value="{{system.currency.sp}}" data-dtype="Number"/></td></tr>
+                    <tr><td>Copper</td></tr>
+                    <tr><td><input class="invi" name="system.currency.cp" type="text" value="{{system.currency.cp}}" data-dtype="Number"/></td></tr>
+                </table>
 
-        </tr>
-        <tr><td>Platinum</td></tr>
-        <tr><td><input name="system.currency.pp" type="text" value="{{system.currency.pp}}" data-dtype="Number"/></td></tr>
-        <tr><td>Gold</td></tr>
-         <tr><td><input name="system.currency.gp" type="text" value="{{system.currency.gp}}" data-dtype="Number"/></td></tr>
-         <tr><td>Silver</td></tr>
-         <tr><td><input name="system.currency.sp" type="text" value="{{system.currency.sp}}" data-dtype="Number"/></td></tr>
-         <tr><td>Copper</td></tr>
-         <tr><td><input name="system.currency.cp" type="text" value="{{system.currency.cp}}" data-dtype="Number"/></td></tr>
+           </div>
+           <!-- Money Col End -->
 
-    </table>
+            <!-- Abilities / Other Col -->
+            <div class="flexcol flex1">
+                <!-- Abilities Row 1 -->
+                <div class="flexrow">
+                    <div class="flexcol center abi_bor h_140 m-5">
+                        <h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.str.mod" data-label="Strength Roll">{{numberFormat system.abilities.str.mod}}</h1>
+                        <input class="abi" name="system.abilities.str.value" type="text" value="{{system.abilities.str.value}}" data-dtype="Number"/>
+                        <h3 class="sheet">Strength</h3>
+                    </div>
+                    <div class="flexcol center abi_bor h_140 m-5">
+                        <h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.dex.mod" data-label="Dexterity Roll">{{numberFormat system.abilities.dex.mod}}</h1>
+                        <input class="abi" name="system.abilities.dex.value" type="text" value="{{system.abilities.dex.value}}" data-dtype="Number"/>
+                        <h3 class="sheet">Dexterity</h3>
+                    </div>
+                    <div class="flexcol center abi_bor h_140 m-5">
+                        <h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.int.mod" data-label="Inteligence Roll">{{numberFormat system.abilities.int.mod}}</h1>
+                        <input class="abi" name="system.abilities.int.value" type="text" value="{{system.abilities.int.value}}" data-dtype="Number"/>
+                        <h3 class="sheet">Inteligence</h3>
+                    </div>
+                    <div class="flexcol center abi_bor h_140 m-5">
+                        <h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.cha.mod" data-label="Charisma Roll">{{numberFormat system.abilities.cha.mod}}</h1>
+                        <input class="abi" name="system.abilities.cha.value" type="text" value="{{system.abilities.cha.value}}" data-dtype="Number"/>
+                        <h3 class="sheet">Charisma</h3>
+                    </div>
+                    <div class="flexcol center abi_bor h_140 m-5">
+                        <h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.per.mod" data-label="Perception Roll">{{numberFormat system.abilities.per.mod}}</h1>
+                        <input class="abi" name="system.abilities.per.value" type="text" value="{{system.abilities.per.value}}" data-dtype="Number"/>
+                        <h3 class="sheet">Perception</h3>
+                    </div>
+                </div>
 
+                <!-- Abilities Row 1 End -->
 
-   </div>
-      <div class="flexcol">
-<div class="flexrow">
+                <!-- Profi / Hp and Mana dice -->
 
-<div class="flexcol">
-<div class="flexcol">
-    <table class="table_main table_shadow table_size">
-<col>
-  <colgroup span="3"></colgroup>
-  <colgroup span="3"></colgroup>
-    <colgroup span="3"></colgroup>
-    <tr>
-        <td colspan="3"><h3 class="sheet">HP</h3></td>
-        <td colspan="3"><h3 class="sheet">Mana</h3></td>
-        <td width="50px"><h3 class="sheet">AC</h3></td>
-        <td colspan="3"><h3 class="sheet">Speed</h3></td>
-        <td>&nbsp</td>
-         <td><h3 class="sheet">Exhaust</h3></td>
-          <td><h3 class="sheet">Dying?</h3></td>
-    </tr>
-    <tr>
-        <td><input name="system.hp.value" type="text" value="{{system.hp.value}}" data-dtype="Number"/></td>
-        <td>/</td>
-       <td><input name="system.hp.max" type="text" value="{{system.hp.max}}" data-dtype="Number"/></td>
-        <td><input name="system.mana.value" type="text" value="{{system.mana.value}}" data-dtype="Number"/></td>
-        <td>/</td>
-        <td><input name="system.mana.max" type="text" value="{{system.mana.max}}" data-dtype="Number"/></td>
-        <td><h4 class="sheet">{{system.attributes.ac}}</h4></td>
-        <td><span style="display:flex"><h4>{{numberFormat system.attributes.movement.sec}}</h4> s.</span></td>
-        <td>&nbsp</td>
-        <td><span style="display:flex"><input style="width: 50px" name="system.attributes.movement.walk" type="text" value="{{system.attributes.movement.walk}}" data-dtype="Number"/>ft.</span></td>
-        <td>&nbsp</td>
-        <td><input style="width:75px;" name="system.attributes.exhaust.value" type="text" value="{{system.attributes.exhaust.value}}" data-dtype="Number"/></td>
-        <td><input type="checkbox" name="system.dying.isDying" {{checked system.dying.isDying}}></td>
-
-    </tr>
-    </table>
-
-    <table class="table_main table_shadow">
-    <col>
-    <colgroup span="4"></colgroup>
-    <colgroup span="4"></colgroup>
-    <tr>
-        <td colspan="4"><h3 class="sheet">HP Dice</h3></td>
-        <td colspan="4"><h3 class="sheet">Mana Dice</h3></td>
-    </tr>
-    <tr>
-        <td><input name="system.hp_dice.value" type="text" value="{{system.hp_dice.value}}" data-dtype="Number"/></td>
-        <td >/</td>
-        <td style="width: 50px">{{numberFormat system.hp_dice.max}}</td>
-        <td><select name="system.hp_dice_type"> {{selectOptions config.hp_dice_type selected=system.hp_dice_type}}</select></td>
-        <td><input  name="system.mana_dice.value" type="text" value="{{system.mana_dice.value}}" data-dtype="Number"/></td>
-        <td>/</td>
-         <td style="width: 50px">{{numberFormat system.hp_dice.max}}</td>
-        <td><select name="system.mana_dice_type">{{selectOptions config.mana_dice_type selected=system.mana_dice_type}}</select></td>
-
-    </tr>
-</table>
-
-    </div>
-
-</div>
-<div class="flexrow">
-    <div class="flexcol"></div>
-    <div class="flexcol">
-        <table class="table_main table_shadow table_size">
-                <tr><td>&nbsp</td>
-                <td><h3 class="sheet">Strength</h3></td>
-                <td><h3 class="sheet">Dexterity</h3></td>
-                 <td><h3 class="sheet">Inteligence</h3></td>
-                  <td><h3 class="sheet">Charisma</h3></td>
-                   <td width="10px">&nbsp</td>
-                    <td><h3 class="sheet">Perception</h3></td>
-        </tr>
-        <tr>      
-                <td><h3 class="sheet">Modifier:</h3></td>    
-                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.str.mod" data-label="Strength Roll">{{numberFormat system.abilities.str.mod}}</h1></td>
-                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.dex.mod" data-label="Dexterity Roll">{{numberFormat system.abilities.dex.mod}}</h1></td>
-                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.int.mod" data-label="Inteligence Roll">{{numberFormat system.abilities.int.mod}}</h1></td>
-                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.cha.mod" data-label="Charisma Roll">{{numberFormat system.abilities.cha.mod}}</h1></td>
-                <td>&nbsp</td>
-                <td><h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.per.mod" data-label="Perception Roll">{{numberFormat system.abilities.per.mod}}</h1></td>
-
-        </tr>
-        <tr>
-            <td><h3 class="sheet">Proficient:</h3></td>
-            <td><input type="checkbox" name="system.abilities.str.proficient" {{checked system.abilities.str.proficient}}></td>
-            <td><input type="checkbox" name="system.abilities.dex.proficient" {{checked system.abilities.dex.proficient}}></td>
-            <td><input type="checkbox" name="system.abilities.int.proficient" {{checked system.abilities.int.proficient}}></td>
-            <td>&nbsp</td>
-            <td>&nbsp</td>
-            <td>&nbsp</td>
-
-        </tr>
-        <tr>
-            <td><h3 class="sheet">Value:</h3></td> 
-            <td><input name="system.abilities.str.value" type="text" value="{{system.abilities.str.value}}" data-dtype="Number"/></td>
-            <td><input name="system.abilities.dex.value" type="text" value="{{system.abilities.dex.value}}" data-dtype="Number"/></td>
-            <td><input name="system.abilities.int.value" type="text" value="{{system.abilities.int.value}}" data-dtype="Number"/></td>
-            <td><input name="system.abilities.cha.value" type="text" value="{{system.abilities.cha.value}}" data-dtype="Number"/></td>
-            <td>&nbsp</td>
-            <td><input name="system.abilities.per.value" type="text" value="{{system.abilities.per.value}}" data-dtype="Number"/></td>
-        </tr>
-        <tr>
-            <td><h3 class="sheet">Proficiency bonus:</h3></td>
-            <td><input name="system.pro_bonus" type="text" value="{{system.pro_bonus}}" data-dtype="Number"/></td>
-            <td><h3 class="sheet">AC bonus:</h3></td>
-            <td><input name="system.ac_bonus" type="text" value="{{system.ac_bonus}}" data-dtype="Number"/></td>
+                <div class="flexrow">
+                    <!-- Profi -->
+                    <div class="flexcol">
+                        <div class="flexrow">
+                            <div class="flexcol center">
+                                <h3 class="sheet">Proficiency bonus:</h3>
+                                <span class="center"><input style="width:100px" name="system.pro_bonus" type="text" value="{{system.pro_bonus}}" data-dtype="Number"/></span>
+                                <h3 class="sheet">AC bonus:</h3>
+                                <span class="center"><input style="width:100px" name="system.ac_bonus" type="text" value="{{system.ac_bonus}}" data-dtype="Number"/></span>
+                            </div>
+                            <div class="flexcol center">
+                                <h3 class="sheet">Proficient:</h3>
+                                <span class="d-flex center"><h3 class="sheet">Strength</h3><input class="ui-checkbox" type="checkbox" name="system.abilities.str.proficient" {{checked system.abilities.str.proficient}}></span>
+                                <span class="d-flex center"><h3 class="sheet">Dexterity</h3><input class="ui-checkbox" type="checkbox" name="system.abilities.dex.proficient" {{checked system.abilities.dex.proficient}}></span>
+                                <span class="d-flex center"><h3 class="sheet">Inteligence</h3><input class="ui-checkbox" type="checkbox" name="system.abilities.int.proficient" {{checked system.abilities.int.proficient}}></span>
+                            </div>
+                        </div>
 
 
-        </tr>
+                    </div>
+                    <!-- Profi End-->
 
-    </table>
+                    <!-- Dice -->
+                    <div class="flexcol">
+                        <div class="flexrow">
+                            <div class="flexcol center">
+                                <div class="flexrow">
+                                    <div class="flexcol center">
+                                        <h3 class="sheet">HP Dice</h3>
+                                        <span class="d-flex center"><input class="invi w-100" style="width:75px" name="system.hp_dice.value" type="text" value="{{system.hp_dice.value}}" data-dtype="Number"/>/ {{numberFormat system.hp_dice.max}}</span>
+                                        <span class="center m-5"><select style="width:100px" name="system.hp_dice_type"> {{selectOptions config.hp_dice_type selected=system.hp_dice_type}}</select></span>
+                                    </div>
+                                </div>
+                                <div class="flexrow">
+                                    <div class="flexcol center">
+                                        <h3 class="sheet">Mana Dice</h3>
+                                        <span class="d-flex center"><input class="invi w-100" style="width:75px"  name="system.mana_dice.value" type="text" value="{{system.mana_dice.value}}" data-dtype="Number"/>/ {{numberFormat system.hp_dice.max}}</span>
+                                       <span class="center m-5"><select style="width:100px" name="system.mana_dice_type">{{selectOptions config.mana_dice_type selected=system.mana_dice_type}}</select></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flexcol center">
+                            <div class="flexrow">
+                                <div class="flexcol center">
+                                    <h3 class="sheet">Exhaust</h3>
+                                    <span class="center"><input class="invi w-100" style="width:100px" name="system.attributes.exhaust.value" type="text" value="{{system.attributes.exhaust.value}}" data-dtype="Number"/></span>
+                                </div>
+                            </div>
+                             <div class="flexrow">
+                                <div class="flexcol center">
+                                    <h3 class="sheet">Dying?</h3>
+                                   <span class="center"><input class="ui-checkbox center" type="checkbox" name="system.dying.isDying" {{checked system.dying.isDying}}></span>
+                                </div>
+                            </div>
 
-    </div>
-</div>
-</div>
-</div>
-</div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dice End-->
+
+                </div>
+
+                <!-- Profi / Hp and Mana dice End -->
+
+            </div>
+            <!-- Abilities / Other Col End --> 
+
+            <!-- Main Stats -->
+            <div class="flexcol flex0">
+                <table class="table_main table_shadow only_alt table_side">
+                    <tr>
+                        <td class="shield" height="40px">
+                            <h4 class="sheet bold">{{system.attributes.ac}}</h4>
+                            <!--<h3 class="sheet">AC</h3>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="heart">
+                          <input class="bold w_100" name="system.hp.value" type="text" value="{{system.hp.value}}" data-dtype="Number"/>
+                          <input class="invi w_100"  name="system.hp.max" type="text" value="{{system.hp.max}}" data-dtype="Number"/>
+                            <h3 class="sheet">HP</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input class="bold w_100"  name="system.mana.value" type="text" value="{{system.mana.value}}" data-dtype="Number"/>
+                            <input class="invi w_100" name="system.mana.max" type="text" value="{{system.mana.max}}" data-dtype="Number"/>
+                            <h3 class="sheet">Mana</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="display:flex; justify-content: center"><input class="invi w_50" name="system.attributes.movement.walk" type="text" value="{{system.attributes.movement.walk}}" data-dtype="Number"/> <span class="m-l-5">ft.</span></span>
+                            <span style="display:flex; justify-content: center;"><h4>{{numberFormat system.attributes.movement.sec}}</h4><span class="m-l-5">s.</span></span>
+                            <h3 class="sheet">Speed</h3>
+                        </td>
+                    </tr>
+
+
+                </table>
+            </div>
+            <!-- Main Stats End -->
+        </div>
+    <!-- Main Div End -->
+
+
+
+
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}

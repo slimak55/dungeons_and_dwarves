@@ -14,6 +14,7 @@ This is the first version with almost all basic funcions for playing D&D, with m
 ### Future Update
 - Death saving throws indicator
 - Multi-lingual support
+- Number of Items in Inventory
 
 ## Attribution
 This work includes material taken from the System Reference Document 5.1 (“SRD 5.1”) by Wizards of
