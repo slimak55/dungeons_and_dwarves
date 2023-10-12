@@ -9,7 +9,7 @@ This is a Foundry VTT system for Dungeons &amp; Dwarves, fork of DnD 5e, which i
 More info at https://cloudfolium.eu/, or direct rulebook download at https://www.buymeacoffee.com/m.cloud/extras
 
 ### Version Info
-This is the first version with almost all basic funcions for playing D&D, with minor automatization. 
+You can find all the changes to the current version at https://github.com/slimak55/dungeons_and_dwarves/releases/tag/release_0.8
 
 ### Future Updates
 - Death saving throws indicator
