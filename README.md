@@ -1,5 +1,5 @@
 # Dungeons & Dwarves
-### System version 0.7.5
+### System version 0.8
 
 #### Foundry VTT System
 
@@ -14,9 +14,6 @@ This is the first version with almost all basic funcions for playing D&D, with m
 ### Future Updates
 - Death saving throws indicator
 - Multi-lingual support
-- Number of Items in Inventory
-- Automatic base speed, based on type of class
-- Zero max mana dice, when playing class without mana
 - Automatic Mana, and HP dice type based on class type
 
 ## Attribution
