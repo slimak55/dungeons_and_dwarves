@@ -139,5 +139,13 @@ dungeons_and_dwarves.s_level = {
 	normal:"Normal",
 	expert:"Expert",
 	profesional:"Profesional"
+}
 
+
+dungeons_and_dwarves.class_type = {
+	none:"",
+	dex:"Agility",
+	mixed: "Mixed",
+	int: "Magical",
+	str: "Warrior"
 }

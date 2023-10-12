@@ -53,7 +53,8 @@
     },
     "details": {
           "race":"",
-          "class":""
+          "class":"",
+          "class_type":""
     },
     "notes":"",
     "bio":"",
@@ -84,7 +85,8 @@
       "xp": {
           "value": 0
         },
-        "inv_size":""
+        "inv_size":"",
+        "test":0
 },
 
 "NPC": {

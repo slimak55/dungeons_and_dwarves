@@ -59,17 +59,55 @@ _prepareCharacterData(actorData) {
   //Movement seconds Math
   systemData.attributes.movement.sec = systemData.attributes.movement.walk / 5;
 
+  // Movement by class type
+
+  if (systemData.details.class_type === "str" || systemData.details.class_type === "int") {
+
+    systemData.attributes.movement.walk = 25;
+
+  }
+  else if (systemData.details.class_type === "dex") {
+
+      systemData.attributes.movement.walk = 35;
+
+  }
+  else {
+
+    systemData.attributes.movement.walk = 30;
+
+  }
+
+
   // Max Mana and HP dice
     if(systemData.levels === 1){
     systemData.hp_dice.max = 1;
-    systemData.mana_dice.max = 1;
+
+    if (systemData.mana_dice_type === "none"){
+
+      systemData.mana_dice.max = 0;
+    }
+    else{
+       systemData.mana_dice.max = 1;
+    }
+   
 
   }
   else{
 
     systemData.hp_dice.max = Math.floor(systemData.levels / 2);
-    systemData.mana_dice.max = Math.floor(systemData.levels / 2);
+
+     if (systemData.mana_dice_type === "none"){
+
+       systemData.mana_dice.max = 0; 
+     }
+     else{
+
+       systemData.mana_dice.max = Math.floor(systemData.levels / 2); 
+
+     }
+
   }
+ 
 
  //Level Cost
     this.system.level = systemData.levels;
@@ -120,6 +158,39 @@ _prepareCharacterData(actorData) {
 
       }
      
+     // Inv item count
+      let item_count = 0;
+      for (const i of this.items) {
+        if (i.type === 'melee_weapon' || i.type === 'range_weapon' || i.type === 'armor') {
+          if (i.system.eq === true) {
+            item_count += 0;
+
+          }
+          else {
+            item_count += 1;
+
+          }
+
+        }
+        else if (i.type === 'spell' || i.type === 'skill') { item_count += 0;}
+        else{ item_count += 1;}
+        
+      }
+
+    if(systemData.inv_size === "small" && item_count > 10 ){
+     systemData.test = "Overlimit" +"("+ item_count + ")";
+    }
+    else if (systemData.inv_size === "medium" && item_count > 15 ) {
+      systemData.test = "Overlimit" +"("+ item_count + ")";
+    }
+    else if (systemData.inv_size === "big" && item_count > 20 ) {
+      systemData.test = "Overlimit" +"("+ item_count + ")";
+    }
+    else{
+
+       systemData.test = item_count;
+
+    }
 
 
 

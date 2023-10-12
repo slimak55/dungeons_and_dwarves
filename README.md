@@ -11,10 +11,13 @@ More info at https://cloudfolium.eu/, or direct rulebook download at https://www
 ### Version Info
 This is the first version with almost all basic funcions for playing D&D, with minor automatization. 
 
-### Future Update
+### Future Updates
 - Death saving throws indicator
 - Multi-lingual support
 - Number of Items in Inventory
+- Automatic base speed, based on type of class
+- Zero max mana dice, when playing class without mana
+- Automatic Mana, and HP dice type based on class type
 
 ## Attribution
 This work includes material taken from the System Reference Document 5.1 (“SRD 5.1”) by Wizards of
