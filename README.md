@@ -1,5 +1,5 @@
 # Dungeons & Dwarves
-### System version 0.8
+### System version 0.8.5
 
 #### Foundry VTT System
 
@@ -16,7 +16,7 @@ You can find all the changes to the current version at https://github.com/slimak
 ### Future Updates
 - Death saving throws indicator
 - Multi-lingual support
-- Automatic Mana, and HP dice type based on class type
+- Types of weapons and armor, character can use base on class
 
 ## Attribution
 This work includes material taken from the System Reference Document 5.1 (“SRD 5.1”) by Wizards of

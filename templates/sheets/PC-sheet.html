@@ -13,7 +13,7 @@
                 <td width="150px"><input class="invi" name="system.details.race" type="text" value="{{system.details.race}}"/></td>
                 <td width="150px">
                     <select style="width:100px" name="system.details.class_type">{{selectOptions config.class_type selected=system.details.class_type}}</select>
-                    <input class="invi" name="system.details.class" type="text" value="{{system.details.class}}"/></td>
+                   <input class="invi" name="system.details.class" type="text" value="{{system.details.class}}"/></td>
                 <td width="100px"><input class="invi" name="system.xp.value" type="text" value="{{system.xp.value}}" data-dtype="Number"/>/ {{system.xp.max}}</td>
                 <td width="50px"><input class="invi" name="system.levels" type="text" value="{{system.levels}}" data-dtype="Number"/></td>
             </tr>
@@ -105,16 +105,16 @@
                             <div class="flexcol center">
                                 <div class="flexrow">
                                     <div class="flexcol center">
-                                        <h3 class="sheet">HP Dice</h3>
+                                        <h3 class="sheet hvr-pulse rollable" data-roll="{{system.hp_dice_type}}" data-label="HP dice Roll">HP Dice</h3>
                                         <span class="d-flex center"><input class="invi w-100" style="width:75px" name="system.hp_dice.value" type="text" value="{{system.hp_dice.value}}" data-dtype="Number"/>/ {{numberFormat system.hp_dice.max}}</span>
-                                        <span class="center m-5"><select style="width:100px" name="system.hp_dice_type"> {{selectOptions config.hp_dice_type selected=system.hp_dice_type}}</select></span>
+                                        <span class="center m-5">{{system.hp_dice_type}}</span>
                                     </div>
                                 </div>
                                 <div class="flexrow">
                                     <div class="flexcol center">
-                                        <h3 class="sheet">Mana Dice</h3>
+                                        <h3 class="sheet hvr-pulse rollable" data-roll="{{system.mana_dice_type}}" data-label="Mana dice Roll">Mana Dice</h3>
                                         <span class="d-flex center"><input class="invi w-100" style="width:75px"  name="system.mana_dice.value" type="text" value="{{system.mana_dice.value}}" data-dtype="Number"/>/ {{numberFormat system.mana_dice.max}}</span>
-                                       <span class="center m-5"><select style="width:100px" name="system.mana_dice_type">{{selectOptions config.mana_dice_type selected=system.mana_dice_type}}</select></span>
+                                       <span class="center m-5">{{system.mana_dice_type}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -170,8 +170,8 @@
                     </tr>
                     <tr>
                         <td>
-                            <span style="display:flex; justify-content: center;"><h4>{{numberFormat system.attributes.movement.walk}}</h4><span class="m-l-5">ft.</span></span>
-                            <span style="display:flex; justify-content: center;"><h4>{{numberFormat system.attributes.movement.sec}}</h4><span class="m-l-5">s.</span></span>
+                            <span style="display:flex; justify-content: center;"><h4>{{numberFormat system.attributes.movement_speed}}</h4><span class="m-l-5">ft.</span></span>
+                            <span style="display:flex; justify-content: center;"><h4>{{numberFormat system.attributes.movement_sec}}</h4><span class="m-l-5">s.</span></span>
                             <h3 class="sheet">Speed</h3>
                         </td>
                     </tr>
@@ -212,7 +212,7 @@
     </tr>
     {{#each skills as |item id|}}
     <tr class="item" data-item-id="{{item._id}}">
-        <td><span style="display:flex;" class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod + {{item.system.mod}}"><img class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4 class="sheet">{{item.name}}</h4></span></td>
+        <td><span style="display:flex;" class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod + {{item.system.mod}}" data-label="{{item.name}} Roll"><img class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4 class="sheet">{{item.name}}</h4></span></td>
         <td>{{item.system.damage}}</td>
         <td>{{item.system.weapon_mod}}</td>
         <td>{{item.system.range}}</td>
@@ -254,7 +254,7 @@
     </tr>
     {{#each eq_weapon as |item id|}}
     <tr class="item" data-item-id="{{item._id}}">
-        <td><span style="display:flex"><a class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod + {{item.system.mod}} "><img  class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4 class="sheet">{{item.name}}</h4></span></td>
+        <td><span style="display:flex"><a class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod + {{item.system.mod}}" data-label="{{item.name}} Roll"><img  class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4 class="sheet">{{item.name}}</h4></span></td>
         <td>{{item.system.damage}}</td>
         <td>{{item.system.weapon_mod}}</td>
         <td>{{item.system.range}}</td>
@@ -306,12 +306,12 @@
     <div class="flexrow">
         <div class="flexcol"><select style="width:90px !important" name="system.inv_size">{{selectOptions config.inv_size selected=system.inv_size}}</select> </div>
         <div class="flexcol"></div>
-        <div class="flexcol"><span class="d-flex" style="justify-content: flex-end;">Items in invetory: <span class="m-l-5"><h3 id="myH2" class="sheet">{{ system.test}}</h3></span></span></div>
+        <div class="flexcol"><span class="d-flex" style="justify-content: flex-end;">Items in invetory: <span class="m-l-5"><h3 id="myH2" class="sheet">{{ system.inv_count}}</h3></span></span></div>
     </div>
 
 
 
-<table class="table table_main table_shadow items-list">
+<table class="table table_main table_shadow item-list">
     <tr>
        <th style="text-align:left;">Name</th> 
        <th>Type</th>
@@ -323,7 +323,7 @@
     </tr>
     {{#each inv as |item id|}}
     <tr class="item" data-item-id="{{item._id}}">
-        <td><span style="display:flex"><a class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod "><img class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4 class="sheet">{{item.name}}</h4></span></td>
+        <td><span style="display:flex"><a class="rollable" data-roll="{{item.system.damage}} + @abilities.{{item.system.weapon_mod}}.mod" data-label="{{item.name}} Roll"><img class="hvr-pulse" src="{{item.img}}" title="{{item.name}}" width="24" height="24"/></a><h4 class="sheet">{{item.name}}</h4></span></td>
         <td>{{item.type}}</td>
         <td><input class="invi in-edit" style="width:50px;" name="item.system.quantity" type="text" value="{{item.system.quantity}}" data-dtype="Number" data-name="system.quantity"/></td>
         <td>{{item.system.cost}} {{item.system.cost_type}}</td>

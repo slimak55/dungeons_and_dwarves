@@ -7,7 +7,8 @@ export default class DnD_PcSheet extends ActorSheet {
 
  			width: 1000,
  			height:1000,
- 			tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "skills" }]
+ 			tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "skills" }],
+      dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
    
 
     });
@@ -164,6 +165,8 @@ _prepareEnemyItems(context) {
      html.find('.in-edit-ammo2').change(this._onQuantityAmmo2Change.bind(this));
 
 	}
+
+
 
   _onToggleItem(event) {
     event.preventDefault();

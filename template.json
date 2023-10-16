@@ -4,7 +4,6 @@
   "templates": {
     "abilities": {
     "str":{
-      "name":"Strength",
       "value": 10,
       "proficient": false
       },
@@ -39,11 +38,10 @@
             "value": 10,
             "max": null
           },
-        "movement": {
-            "walk": 30,
-            "units": "ft",
-            "hover": false
-          }
+        "movement_speed": 30,
+        "movement_sec": 0
+
+
     },
     "currency": {
           "pp": 0,
@@ -81,12 +79,12 @@
       "max":null
     },
      "mana_dice_type":"",
-      "levels": 1,
+      "levels": 0,
       "xp": {
           "value": 0
         },
         "inv_size":"",
-        "test":0
+        "inv_count":0
 },
 
 "NPC": {

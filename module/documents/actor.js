@@ -23,8 +23,8 @@ export class DnD_Actor extends Actor {
 
 
 _prepareCharacterData(actorData) {
-	if (actorData.type !== 'PC') return;
 
+	if (actorData.type !== 'PC') return;
 	const systemData = actorData.system;
   //Ability Modifiers
   if (systemData.abilities.str.proficient === false) {
@@ -53,36 +53,45 @@ _prepareCharacterData(actorData) {
     const pro_value = systemData.abilities.int.value + systemData.pro_bonus;
     systemData.abilities.int.mod = Math.floor((pro_value - 10) / 2);
   }
+
+
   systemData.abilities.cha.mod = Math.floor((systemData.abilities.cha.value - 10) / 2);
   systemData.abilities.per.mod = Math.floor((systemData.abilities.per.value - 10) / 2);
 
-  //Movement seconds Math
-  systemData.attributes.movement.sec = systemData.attributes.movement.walk / 5;
-
+ 
   // Movement by class type
 
   if (systemData.details.class_type === "str" || systemData.details.class_type === "int") {
 
-    systemData.attributes.movement.walk = 25;
+    systemData.attributes.movement_speed = 25;
+     //Movement seconds Math
+     systemData.attributes.movement_sec = systemData.attributes.movement_speed / 5;
 
   }
   else if (systemData.details.class_type === "dex") {
 
-      systemData.attributes.movement.walk = 35;
+      systemData.attributes.movement_speed = 35;
+       //Movement seconds Math
+      systemData.attributes.movement_sec = systemData.attributes.movement_speed / 5;
 
   }
   else {
 
-    systemData.attributes.movement.walk = 30;
+   systemData.attributes.movement_speed = 30;
+    //Movement seconds Math
+  systemData.attributes.movement_sec = systemData.attributes.movement_speed / 5;
 
   }
+
+
+
 
 
   // Max Mana and HP dice
     if(systemData.levels === 1){
     systemData.hp_dice.max = 1;
 
-    if (systemData.mana_dice_type === "none"){
+    if (systemData.details.class_type === "dex" || systemData.details.class_type === "str"){
 
       systemData.mana_dice.max = 0;
     }
@@ -96,7 +105,7 @@ _prepareCharacterData(actorData) {
 
     systemData.hp_dice.max = Math.floor(systemData.levels / 2);
 
-     if (systemData.mana_dice_type === "none"){
+     if (systemData.details.class_type === "dex" || systemData.details.class_type === "str"){
 
        systemData.mana_dice.max = 0; 
      }
@@ -108,6 +117,26 @@ _prepareCharacterData(actorData) {
 
   }
  
+// Mana / HP dice types
+
+  if (systemData.details.class_type === "str") {
+      systemData.hp_dice_type = "1d10"
+      systemData.mana_dice_type = "None"
+    }
+  else if (systemData.details.class_type === "dex") {
+      systemData.hp_dice_type = "1d8"
+      systemData.mana_dice_type = "None"
+    }
+   else if (systemData.details.class_type === "mixed") {
+      systemData.hp_dice_type = "1d8"
+      systemData.mana_dice_type = "1d8*25"
+    }
+  else if (systemData.details.class_type === "int") {
+      systemData.hp_dice_type = "1d6"
+      systemData.mana_dice_type = "1d12*25"
+    }
+
+
 
  //Level Cost
     this.system.level = systemData.levels;
@@ -177,18 +206,21 @@ _prepareCharacterData(actorData) {
         
       }
 
-    if(systemData.inv_size === "small" && item_count > 10 ){
-     systemData.test = "Overlimit" +"("+ item_count + ")";
+    if(systemData.inv_size === "tiny" && item_count > 10 ){
+     systemData.inv_count = "Overlimit" +"("+ item_count + ")";
     }
-    else if (systemData.inv_size === "medium" && item_count > 15 ) {
-      systemData.test = "Overlimit" +"("+ item_count + ")";
+    else if(systemData.inv_size === "small" && item_count > 15 ){
+     systemData.inv_count = "Overlimit" +"("+ item_count + ")";
     }
-    else if (systemData.inv_size === "big" && item_count > 20 ) {
-      systemData.test = "Overlimit" +"("+ item_count + ")";
+    else if (systemData.inv_size === "medium" && item_count > 25 ) {
+      systemData.inv_count = "Overlimit" +"("+ item_count + ")";
+    }
+    else if (systemData.inv_size === "big" && item_count > 50 ) {
+      systemData.inv_count = "Overlimit" +"("+ item_count + ")";
     }
     else{
 
-       systemData.test = item_count;
+       systemData.inv_count = item_count;
 
     }
 

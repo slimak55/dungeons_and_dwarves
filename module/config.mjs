@@ -2,11 +2,10 @@ export const dungeons_and_dwarves = {};
 
 dungeons_and_dwarves.weapon_type = {
 	none: "",
-	small:"Small",
-	light:"Light",
-	medium:"Medium",
-	heavy:"Heavy",
-	special:"Special"
+	small:"Tier 1",
+	light:"Tier 2",
+	heavy:"Tier 3",
+	special:"Tier 4"
 
 
 }
@@ -101,24 +100,6 @@ dungeons_and_dwarves.armor_type = {
 	heavy:"Heavy"
 
 }
-
-dungeons_and_dwarves.hp_dice_type = {
-
-	magic:"1d6",
-	dexter_mix:"1d8",
-	warrior:"1d10",
-
-
-}
-dungeons_and_dwarves.mana_dice_type = {
-
-	none:"None",
-	magic:"1d12*25",
-	mixed:"1d8*25"
-
-
-}
-
 dungeons_and_dwarves.CHARACTER_EXP_LEVELS = [
   0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000,
   120000, 140000, 165000, 195000, 225000, 265000, 305000, 355000
@@ -126,7 +107,7 @@ dungeons_and_dwarves.CHARACTER_EXP_LEVELS = [
 
 dungeons_and_dwarves.inv_size = {
 
-
+	tiny:"Tiny",
 	small:"Small",
 	medium:"Medium",
 	big:"Big",
