@@ -11,10 +11,10 @@ More info at https://cloudfolium.eu/, or direct rulebook download at https://www
 WARNING! For the time being the rules are only in Czech, on English version is working.
 
 ### Version Info
-You can find all the changes to the current version at https://github.com/slimak55/dungeons_and_dwarves/releases/tag/release_0.8.5
+You can find all the changes to the current version at [Release 0.8.5](https://github.com/slimak55/dungeons_and_dwarves/releases/tag/release_0.8.5)
 
 ### Documentation
-You can find documentation at https://github.com/slimak55/dungeons_and_dwarves/blob/main/DOCUMENTATION.md
+You can find documentation at [Documentation](https://github.com/slimak55/dungeons_and_dwarves/blob/main/DOCUMENTATION.md)
 
 ### Future Updates
 - Death saving throws indicator
