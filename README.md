@@ -13,12 +13,16 @@ WARNING! For the time being the rules are only in Czech, on English version is w
 ### Version Info
 You can find all the changes to the current version at https://github.com/slimak55/dungeons_and_dwarves/releases/tag/release_0.8.5
 
+### Documentation
+You can find documentation at https://github.com/slimak55/dungeons_and_dwarves/blob/main/DOCUMENTATION.md
+
 ### Future Updates
 - Death saving throws indicator
 - Multi-lingual support
 - Types of weapons and armor, character can use base on class
 - Added better and more support for sci-fi (Fururistic wolrds) on this system based on the rules
 - Added sheet for firearms mainly for sci-fi settings
+- Simple money conversion (Partial Item Piles integration)
 
 ## Attribution
 This work includes material taken from the System Reference Document 5.1 (“SRD 5.1”) by Wizards of
