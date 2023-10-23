@@ -17,6 +17,8 @@ You can find all the changes to the current version at https://github.com/slimak
 - Death saving throws indicator
 - Multi-lingual support
 - Types of weapons and armor, character can use base on class
+- Added better and more support for sci-fi (Fururistic wolrds) on this system based on the rules
+- Added sheet for firearms mainly for sci-fi settings
 
 ## Attribution
 This work includes material taken from the System Reference Document 5.1 (“SRD 5.1”) by Wizards of
