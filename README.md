@@ -14,7 +14,7 @@ WARNING! For the time being the rules are only in Czech, on English version is w
 You can find all the changes to the current version at [Release 0.8.5](https://github.com/slimak55/dungeons_and_dwarves/releases/tag/release_0.8.5)
 
 ### Documentation
-You can find documentation at [Documentation](https://github.com/slimak55/dungeons_and_dwarves/blob/main/DOCUMENTATION.md)
+You can find documentation at [Wiki](https://github.com/slimak55/dungeons_and_dwarves/wiki/DOCUMENTAION)
 
 ### Future Updates
 - Death saving throws indicator
