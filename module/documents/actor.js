@@ -25,7 +25,10 @@ export class DnD_Actor extends Actor {
 _prepareCharacterData(actorData) {
 
 	if (actorData.type !== 'PC') return;
+
 	const systemData = actorData.system;
+
+
   //Ability Modifiers
   if (systemData.abilities.str.proficient === false) {
     systemData.abilities.str.mod = Math.floor((systemData.abilities.str.value - 10) / 2);
@@ -239,6 +242,20 @@ _prepareCharacterData(actorData) {
     }
 
 
+    if (systemData.dying.success >= 3) {
+      systemData.dying.success = 3;
+      systemData.dying.failure = 0;
+      systemData.dying.isDead = game.i18n.localize("dnd.isAlive");
+      systemData.attributes.hp.value = 1;
+
+    }
+    if (systemData.dying.failure >= 3) {
+
+      systemData.dying.failure = 3;
+      systemData.dying.success = 0;
+      systemData.dying.isDead = game.i18n.localize("dnd.isDead");
+
+    }
 
 }
 _prepareNpcData(actorData){}

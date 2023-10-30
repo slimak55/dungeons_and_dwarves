@@ -85,7 +85,10 @@
 "dnd.inv_size_small":"Malý",
 "dnd.inv_size_medium":"Střední",
 "dnd.inv_size_big":"Velký",
-"dnd.inv_size_infinite":"Nekonečný"
+"dnd.inv_size_infinite":"Nekonečný",
+
+"dnd.isDead":"Dead",
+"dnd.isAlive":"Stabilized"
 
 
 }

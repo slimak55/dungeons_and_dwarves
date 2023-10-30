@@ -17,7 +17,6 @@ You can find all the changes to the current version at [Release 0.8.5](https://g
 You can find documentation at [Wiki](https://github.com/slimak55/dungeons_and_dwarves/wiki/DOCUMENTAION)
 
 ### Future Updates
-- Death saving throws indicator
 - Added better and more support for sci-fi (Fururistic wolrds) for this system based on the rules
 - Added sheet for firearms mainly for sci-fi settings
 - Simple money conversion (Partial Item Piles integration)

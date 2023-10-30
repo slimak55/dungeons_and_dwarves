@@ -162,11 +162,38 @@ _prepareEnemyItems(context) {
 
     html.find('.in-edit-ammo1').change(this._onQuantityAmmo1Change.bind(this));
 
-     html.find('.in-edit-ammo2').change(this._onQuantityAmmo2Change.bind(this));
+    html.find('.in-edit-ammo2').change(this._onQuantityAmmo2Change.bind(this));
+
+    html.find('.on-fail').click(this._onFail.bind(this))
+
+    html.find('.on-success').click(this._onSuccess.bind(this))
+
+    html.find('.on-reset').click(this._onReset.bind(this))
 
 	}
 
 
+_onReset(event){
+
+this.document.update({'system.dying.success' : 0 });
+this.document.update({'system.dying.failure' : 0 });
+this.document.update({'system.dying.isDying' : false });
+this.document.update({'system.dying.isDead' : "Dying" });
+
+}
+
+_onSuccess(event){
+
+this.document.update({'system.dying.success' : this.document.system.dying.success + 1 })
+
+}
+
+_onFail(event) {
+
+
+  this.document.update({'system.dying.failure' : this.document.system.dying.failure + 1 })
+
+}
 
   _onToggleItem(event) {
     event.preventDefault();

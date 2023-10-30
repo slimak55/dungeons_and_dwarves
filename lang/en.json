@@ -86,7 +86,9 @@
 "dnd.inv_size_small":"Small",
 "dnd.inv_size_medium":"Medium",
 "dnd.inv_size_big":"Big",
-"dnd.inv_size_infinite":"Infinite"
+"dnd.inv_size_infinite":"Infinite",
 
+"dnd.isDead":"Dead",
+"dnd.isAlive":"Stabilized"
 
 }
