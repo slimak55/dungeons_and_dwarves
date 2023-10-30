@@ -84,7 +84,9 @@
           "value": 0
         },
         "inv_size":"",
-        "inv_count":0
+        "inv_count":0,
+        "usable_weapon":"",
+        "usable_armour":""
 },
 
 "NPC": {

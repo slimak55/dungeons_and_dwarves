@@ -18,9 +18,7 @@ You can find documentation at [Wiki](https://github.com/slimak55/dungeons_and_dw
 
 ### Future Updates
 - Death saving throws indicator
-- Multi-lingual support
-- Types of weapons and armor, character can use base on class
-- Added better and more support for sci-fi (Fururistic wolrds) on this system based on the rules
+- Added better and more support for sci-fi (Fururistic wolrds) for this system based on the rules
 - Added sheet for firearms mainly for sci-fi settings
 - Simple money conversion (Partial Item Piles integration)
 

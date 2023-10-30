@@ -1,0 +1,91 @@
+{
+
+"dnd.Name":"Jméno",
+
+"dnd.Race":"Rasa",
+"dnd.Class":"Povolání",
+"dnd.classType_dex":"Obratnostní",
+"dnd.classType_mix_str":"Míchané se Sílou",
+"dnd.classType_mix_dex":"Míchané s Obratností",
+"dnd.classType_int":"Magické",
+"dnd.classType_str":"Válečnické",
+"dnd.xp":"ZK",
+"dnd.Level":"Úroveň",
+
+"dnd.Money":"Peníze",
+"dnd.Platinum":"Platiny",
+"dnd.Gold":"Zlaťáky",
+"dnd.Silver":"Stříbrňáky",
+"dnd.Copper":"Měďáky",
+
+"dnd.Strength":"Síla",
+"dnd.Dexterity":"Obratnost",
+"dnd.Inteligence":"Inteligence",
+"dnd.Charisma":"Charisma",
+"dnd.Perception":"Vnímaní",
+
+"dnd.pro_bonus":"Zdatnostní bonus",
+"dnd.ac_bonus":"OC bonus",
+"dnd.pro_in":"Zdatný v",
+"dnd.pro_Strength":"Síle",
+"dnd.pro_Dexterity":"Obratnosti",
+"dnd.pro_Inteligence":"Inteligenci",
+
+"dnd.hp_dice":"Kostka Zdraví",
+"dnd.mana_dice":"Kostka Many",
+
+"dnd.mana_type_str_dex":"Žádná",
+
+"dnd.Exhaust":"Vysílení",
+"dnd.Dying":"Umírání?",
+
+"dnd.hp":"HP",
+"dnd.mana":"Mana",
+"dnd.speed":"Rychlost",
+
+"dnd.tab_spell":"Dovednosti/Kouzla",
+"dnd.tab_inv":"Vybavení & Inventář",
+"dnd.bio":"Životopis",
+"dnd.tab_notes":"Poznámky",
+
+"dnd.inv_name":"Jméno",
+"dnd.s_damage":"Zranění",
+"dnd.s_damage_mod":"Modifikátor",
+"dnd.s_w_range":"Dosah (ft.)",
+"dnd.s_aoe":"AoE",
+"dnd.s_damage_type":"Type zranění",
+"dnd.s_mana":"Mana/Obnova (kola)",
+"dnd.s_type":"Typ Dovednosti/Kouzla",
+"dnd.controls":"Ovládání",
+"dnd.w_equip":"Vybavené Zbraně",
+"dnd.w_dmg_roll":"Hod na Zranění",
+"dnd.w_dmg_mod":"Modifikátor zranění",
+"dnd.w_dmg_type":"Typ Zranění",
+"dnd.w_ammo":"Munice",
+"dnd.a_equip":"Vybavené Brnění",
+"dnd.ac":"OC",
+"dnd.a_type":"Typ Brnění",
+"dnd.inv":"Inventář",
+"dnd.inv_type":"Typ",
+"dnd.inv_quantity":"Množstí",
+"dnd.cost":"Cena",
+"dnd.rariry":"Vzácnost",
+"dnd.appearance":"Vzhled",
+"dnd.inv_count":"Věci v invetáři",
+"dnd.a.equip_c_text":"Dokáže vybavit",
+"dnd.w.equip_c_text":"Dokáže použít",
+"dnd.a.equip_c_str":"Stupěň 3 a nižší",
+"dnd.a.equip_c_int":"Stupěň 1 nebo Stupěň 2 with STR. >= 15",
+"dnd.a.equip_c_dex":"Stupěň 2 a nižší nebo Stupěň 3 se STR. >= 15",
+"dnd.w.equip_c_str":"Stupěň 3 a nižší nebo Stupěň 4 se STR. >= 15",
+"dnd.w.equip_c_int":"Stupěň 1 nebo Stupěň 2 with STR. >= 15",
+"dnd.w.equip_c_dex":"Stupěň 2 a nižší nebo Stupěň 3 se STR. >= 15",
+
+"dnd.inv_size_tiny":"Malinký",
+"dnd.inv_size_small":"Malý",
+"dnd.inv_size_medium":"Střední",
+"dnd.inv_size_big":"Velký",
+"dnd.inv_size_infinite":"Nekonečný"
+
+
+}

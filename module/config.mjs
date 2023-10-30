@@ -107,11 +107,11 @@ dungeons_and_dwarves.CHARACTER_EXP_LEVELS = [
 
 dungeons_and_dwarves.inv_size = {
 
-	tiny:"Tiny",
-	small:"Small",
-	medium:"Medium",
-	big:"Big",
-	infinite:"Infinite"
+	tiny:"dnd.inv_size_tiny",
+	small:"dnd.inv_size_small",
+	medium:"dnd.inv_size_medium",
+	big:"dnd.inv_size_big",
+	infinite:"dnd.inv_size_infinite"
 
 
 }
@@ -125,8 +125,9 @@ dungeons_and_dwarves.s_level = {
 
 dungeons_and_dwarves.class_type = {
 	none:"",
-	dex:"Agility",
-	mixed: "Mixed",
-	int: "Magical",
-	str: "Warrior"
+	dex:"dnd.classType_dex",
+	mixed_str: "dnd.classType_mix_str",
+	mixed_dex: "dnd.classType_mix_dex",
+	int: "dnd.classType_int",
+	str: "dnd.classType_str"
 }

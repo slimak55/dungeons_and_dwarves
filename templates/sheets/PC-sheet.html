@@ -1,18 +1,18 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
         <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
-        <h1 class=""><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'Name' }}"/></h1>
+        <h1 class=""><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'dnd.Name' }}"/></h1>
         <table class="table_main table-color no_color">
             <tr height="35px">
-                <td><h2 class="sheet">Race</h2></td>
-                <td><h2 class="sheet">Class</h2></td>
-                 <td><h2 class="sheet">XP</h2></td>
-                  <td><h2 class="sheet">Level</h2></td>
+                <td><h2 class="sheet">{{localize "dnd.Race"}}</h2></td>
+                <td><h2 class="sheet">{{localize "dnd.Class"}}</h2></td>
+                 <td><h2 class="sheet">{{localize "dnd.xp"}}</h2></td>
+                  <td><h2 class="sheet">{{localize "dnd.Level"}}</h2></td>
             </tr>
             <tr>
                 <td width="150px"><input class="invi" name="system.details.race" type="text" value="{{system.details.race}}"/></td>
                 <td width="150px">
-                    <select style="width:100px" name="system.details.class_type">{{selectOptions config.class_type selected=system.details.class_type}}</select>
+                    <select style="width:140px" class="center" name="system.details.class_type">{{selectOptions config.class_type selected=system.details.class_type localize=true}}</select>
                    <input class="invi" name="system.details.class" type="text" value="{{system.details.class}}"/></td>
                 <td width="100px"><input class="invi" name="system.xp.value" type="text" value="{{system.xp.value}}" data-dtype="Number"/>/ {{system.xp.max}}</td>
                 <td width="50px"><input class="invi" name="system.levels" type="text" value="{{system.levels}}" data-dtype="Number"/></td>
@@ -27,15 +27,15 @@
            <div class="flexcol flex0">
                 <table class="table_main table_shadow only_alt table_side">
                     <tr>
-                        <td><h2 class="sheet">Money</h2></td>
+                        <td><h2 class="sheet">{{localize "dnd.Money"}}</h2></td>
                     </tr>
-                    <tr><td>Platinum</td></tr>
+                    <tr><td>{{localize "dnd.Platinum"}}</td></tr>
                     <tr><td><input class="invi" name="system.currency.pp" type="text" value="{{system.currency.pp}}" data-dtype="Number"/></td></tr>
-                    <tr><td>Gold</td></tr>
+                    <tr><td>{{localize "dnd.Gold"}}</td></tr>
                     <tr><td><input class="invi" name="system.currency.gp" type="text" value="{{system.currency.gp}}" data-dtype="Number"/></td></tr>
-                    <tr><td>Silver</td></tr>
+                    <tr><td>{{localize "dnd.Silver"}}</td></tr>
                     <tr><td><input class="invi" name="system.currency.sp" type="text" value="{{system.currency.sp}}" data-dtype="Number"/></td></tr>
-                    <tr><td>Copper</td></tr>
+                    <tr><td>{{localize "dnd.Copper"}}</td></tr>
                     <tr><td><input class="invi" name="system.currency.cp" type="text" value="{{system.currency.cp}}" data-dtype="Number"/></td></tr>
                 </table>
 
@@ -49,27 +49,27 @@
                     <div class="flexcol center abi_bor h_140 m-5 table_shadow">
                         <h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.str.mod" data-label="Strength Roll">{{numberFormat system.abilities.str.mod}}</h1>
                         <input  class="abi" name="system.abilities.str.value" type="text" value="{{system.abilities.str.value}}" data-dtype="Number"/>
-                        <h3 class="sheet">Strength</h3>
+                        <h3 class="sheet">{{localize "dnd.Strength"}}</h3>
                     </div>
                     <div class="flexcol center abi_bor h_140 m-5 table_shadow">
                         <h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.dex.mod" data-label="Dexterity Roll">{{numberFormat system.abilities.dex.mod}}</h1>
                         <input class="abi" name="system.abilities.dex.value" type="text" value="{{system.abilities.dex.value}}" data-dtype="Number"/>
-                        <h3 class="sheet">Dexterity</h3>
+                        <h3 class="sheet">{{localize "dnd.Dexterity"}}</h3>
                     </div>
                     <div class="flexcol center abi_bor h_140 m-5 table_shadow">
                         <h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.int.mod" data-label="Inteligence Roll">{{numberFormat system.abilities.int.mod}}</h1>
                         <input class="abi" name="system.abilities.int.value" type="text" value="{{system.abilities.int.value}}" data-dtype="Number"/>
-                        <h3 class="sheet">Inteligence</h3>
+                        <h3 class="sheet">{{localize "dnd.Inteligence"}}</h3>
                     </div>
                     <div class="flexcol center abi_bor h_140 m-5 table_shadow">
                         <h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.cha.mod" data-label="Charisma Roll">{{numberFormat system.abilities.cha.mod}}</h1>
                         <input class="abi" name="system.abilities.cha.value" type="text" value="{{system.abilities.cha.value}}" data-dtype="Number"/>
-                        <h3 class="sheet">Charisma</h3>
+                        <h3 class="sheet">{{localize "dnd.Charisma"}}</h3>
                     </div>
                     <div class="flexcol center abi_bor h_140 m-5 table_shadow">
                         <h1 class="rollable hvr-pulse sheet" data-roll="d20+@abilities.per.mod" data-label="Perception Roll">{{numberFormat system.abilities.per.mod}}</h1>
                         <input class="abi" name="system.abilities.per.value" type="text" value="{{system.abilities.per.value}}" data-dtype="Number"/>
-                        <h3 class="sheet">Perception</h3>
+                        <h3 class="sheet">{{localize "dnd.Perception"}}</h3>
                     </div>
                 </div>
 
@@ -82,16 +82,16 @@
                     <div class="flexcol">
                         <div class="flexrow">
                             <div class="flexcol center">
-                                <h3 class="sheet">Proficiency bonus</h3>
+                                <h3 class="sheet">{{localize "dnd.pro_bonus"}}</h3>
                                 <span class="center"><input style="width:100px" name="system.pro_bonus" type="text" value="{{system.pro_bonus}}" data-dtype="Number"/></span>
-                                <h3 class="sheet">AC bonus</h3>
+                                <h3 class="sheet">{{localize "dnd.ac_bonus"}}</h3>
                                 <span class="center"><input style="width:100px" name="system.ac_bonus" type="text" value="{{system.ac_bonus}}" data-dtype="Number"/></span>
                             </div>
                             <div class="flexcol center">
-                                <h3 class="sheet">Proficient in:</h3>
-                                <span class="d-flex center"><h3 class="sheet">Strength</h3><input class="ui-checkbox" type="checkbox" name="system.abilities.str.proficient" {{checked system.abilities.str.proficient}}></span>
-                                <span class="d-flex center"><h3 class="sheet">Dexterity</h3><input class="ui-checkbox" type="checkbox" name="system.abilities.dex.proficient" {{checked system.abilities.dex.proficient}}></span>
-                                <span class="d-flex center"><h3 class="sheet">Inteligence</h3><input class="ui-checkbox" type="checkbox" name="system.abilities.int.proficient" {{checked system.abilities.int.proficient}}></span>
+                                <h3 class="sheet">{{localize "dnd.pro_in"}}:</h3>
+                                <span class="d-flex center"><h3 class="sheet">{{localize "dnd.pro_Strength"}}</h3><input class="ui-checkbox" type="checkbox" name="system.abilities.str.proficient" {{checked system.abilities.str.proficient}}></span>
+                                <span class="d-flex center"><h3 class="sheet">{{localize "dnd.pro_Dexterity"}}</h3><input class="ui-checkbox" type="checkbox" name="system.abilities.dex.proficient" {{checked system.abilities.dex.proficient}}></span>
+                                <span class="d-flex center"><h3 class="sheet">{{localize "dnd.pro_Inteligence"}}</h3><input class="ui-checkbox" type="checkbox" name="system.abilities.int.proficient" {{checked system.abilities.int.proficient}}></span>
                             </div>
                         </div>
 
@@ -105,14 +105,14 @@
                             <div class="flexcol center">
                                 <div class="flexrow">
                                     <div class="flexcol center">
-                                        <h3 class="sheet hvr-pulse rollable" data-roll="{{system.hp_dice_type}}" data-label="HP dice Roll">HP Dice</h3>
+                                        <h3 class="sheet hvr-pulse rollable" data-roll="{{system.hp_dice_type}}" data-label="HP dice Roll">{{localize "dnd.hp_dice"}}</h3>
                                         <span class="d-flex center"><input class="invi w-100" style="width:75px" name="system.hp_dice.value" type="text" value="{{system.hp_dice.value}}" data-dtype="Number"/>/ {{numberFormat system.hp_dice.max}}</span>
                                         <span class="center m-5">{{system.hp_dice_type}}</span>
                                     </div>
                                 </div>
                                 <div class="flexrow">
                                     <div class="flexcol center">
-                                        <h3 class="sheet hvr-pulse rollable" data-roll="{{system.mana_dice_type}}" data-label="Mana dice Roll">Mana Dice</h3>
+                                        <h3 class="sheet hvr-pulse rollable" data-roll="{{system.mana_dice_type}}" data-label="Mana dice Roll">{{localize "dnd.mana_dice"}}</h3>
                                         <span class="d-flex center"><input class="invi w-100" style="width:75px"  name="system.mana_dice.value" type="text" value="{{system.mana_dice.value}}" data-dtype="Number"/>/ {{numberFormat system.mana_dice.max}}</span>
                                        <span class="center m-5">{{system.mana_dice_type}}</span>
                                     </div>
@@ -121,13 +121,13 @@
                             <div class="flexcol center">
                             <div class="flexrow">
                                 <div class="flexcol center">
-                                    <h3 class="sheet">Exhaust</h3>
+                                    <h3 class="sheet">{{localize "dnd.Exhaust"}}</h3>
                                     <span class="center"><input class="w-100" style="width:100px" name="system.attributes.exhaust.value" type="text" value="{{system.attributes.exhaust.value}}" data-dtype="Number"/></span>
                                 </div>
                             </div>
                              <div class="flexrow">
                                 <div class="flexcol center">
-                                    <h3 class="sheet">Dying?</h3>
+                                    <h3 class="sheet">{{localize "dnd.Dying"}}</h3>
                                    <span class="center"><input class="ui-checkbox center" type="checkbox" name="system.dying.isDying" {{checked system.dying.isDying}}></span>
                                 </div>
                             </div>
@@ -158,21 +158,21 @@
                         <td>
                          <span><input class="bold w_100" name="system.hp.value" type="text" value="{{system.hp.value}}" data-dtype="Number"/></span>
                           <span><input class="invi w_100 m-t-5"  name="system.hp.max" type="text" value="{{system.hp.max}}" data-dtype="Number"/></span>
-                            <h3 class="sheet">HP</h3>
+                            <h3 class="sheet">{{localize "dnd.hp"}}</h3>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <span><input class="bold w_100"  name="system.mana.value" type="text" value="{{system.mana.value}}" data-dtype="Number"/></span>
                             <span><input class="invi w_100 m-t-5" name="system.mana.max" type="text" value="{{system.mana.max}}" data-dtype="Number"/></span>
-                            <h3 class="sheet">Mana</h3></span>
+                            <h3 class="sheet">{{localize "dnd.mana"}}</h3></span>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <span style="display:flex; justify-content: center;"><h4>{{numberFormat system.attributes.movement_speed}}</h4><span class="m-l-5">ft.</span></span>
                             <span style="display:flex; justify-content: center;"><h4>{{numberFormat system.attributes.movement_sec}}</h4><span class="m-l-5">s.</span></span>
-                            <h3 class="sheet">Speed</h3>
+                            <h3 class="sheet">{{localize "dnd.speed"}}</h3>
                         </td>
                     </tr>
 
@@ -188,10 +188,10 @@
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="skills">Skills/Spells</a>
-    <a class="item" data-tab="ivnt">Gear & Inventory</a>
-    <a class="item" data-tab="bio">Biography</a>
-    <a class="item" data-tab="notes">Notes</a>
+    <a class="item" data-tab="skills">{{localize "dnd.tab_spell"}}</a>
+    <a class="item" data-tab="ivnt">{{localize "dnd.tab_inv"}}</a>
+    <a class="item" data-tab="bio">{{localize "dnd.bio"}}</a>
+    <a class="item" data-tab="notes">{{localize "dnd.tab_notes"}}</a>
   </nav>
 
   <section class="sheet-body">
@@ -199,15 +199,15 @@
 
     <table class="table table_main table_shadow items-list">
     <tr>
-       <th style="text-align:left;">Name</th> 
-       <th>Damage</th>
-       <th>Damage Modifier</th>
-       <th>Range (tf.)</th>
-       <th>AoE</th>
-       <th>Damage Type</th>
-       <th>Mana/Cooldown (rounds)</th>
-       <th>Skill / Spell Type</th>
-       <th>Controls</th>
+       <th style="text-align:left;">{{localize "dnd.inv_name"}}</th> 
+       <th>{{localize "dnd.s_damage"}}</th>
+       <th>{{localize "dnd.s_damage_mod"}}</th>
+       <th>{{localize "dnd.s_w_range"}}</th>
+       <th>{{localize "dnd.s_aoe"}}</th>
+       <th>{{localize "dnd.s_damage_type"}}</th>
+       <th>{{localize "dnd.s_mana"}}</th>
+       <th>{{localize "dnd.s_type"}}</th>
+       <th>{{localize "dnd.controls"}}</th>
 
     </tr>
     {{#each skills as |item id|}}
@@ -238,18 +238,18 @@
 
 
 <div class="tab ivnt" data-group="primary" data-tab="ivnt">
-<h2 class="sheet">Equiped Weapons</h2>
-
+<h2 class="sheet">{{localize "dnd.w_equip"}}</h2>
+<span class="d-flex">{{localize "dnd.w.equip_c_text"}}:<span class="bold m-l-5">{{system.usable_weapon}}</span></span>
 <table class="table table_main table_shadow items-list">
     <tr>
-       <th style="text-align:left;">Name</th> 
-       <th>Damage Roll</th>
-       <th>Damage Modifier</th>
-       <th>Range (tf.)</th>
-       <th>Damage Type</th>
-       <th>Ammo #1</th>
+       <th style="text-align:left;">{{localize "dnd.inv_name"}}</th> 
+       <th>{{localize "dnd.w_dmg_roll"}}</th>
+       <th>{{localize "dnd.w_dmg_mod"}}</th>
+       <th>{{localize "dnd.s_w_range"}}</th>
+       <th>{{localize "dnd.w_dmg_type"}}</th>
+       <th>{{localize "dnd.w_ammo"}} #1</th>
        <th>#2</th>
-       <th>Controls</th>
+       <th>{{localize "dnd.controls"}}</th>
 
     </tr>
     {{#each eq_weapon as |item id|}}
@@ -274,14 +274,14 @@
      {{/each}}
 
 </table>
-<h2 class="sheet">Equiped Armor</h2>
-
+<h2 class="sheet">{{localize "dnd.a_equip"}}</h2>
+<span class="d-flex">{{localize "dnd.a.equip_c_text"}}:<span class="bold m-l-5">{{system.usable_armour}}</span></span>
 <table class="table table_main table_shadow items-list">
     <tr>
-       <th style="text-align:left;">Name</th> 
-       <th>AC</th>
-       <th>Armor Type</th>
-       <th>Controls</th>
+       <th style="text-align:left;">{{localize "dnd.inv_name"}}</th> 
+       <th>{{localize "dnd.ac"}}</th>
+       <th>{{localize "dnd.a_type"}}</th>
+       <th>{{localize "dnd.controls"}}</th>
 
     </tr>
     {{#each eq_armor as |item id|}}
@@ -302,23 +302,23 @@
 
 </table>
 
-    <h2 class="sheet">Inventory</h2>
+    <h2 class="sheet">{{localize "dnd.inv"}}</h2>
     <div class="flexrow">
-        <div class="flexcol"><select style="width:90px !important" name="system.inv_size">{{selectOptions config.inv_size selected=system.inv_size}}</select> </div>
+        <div class="flexcol"><select style="width:90px !important" name="system.inv_size">{{selectOptions config.inv_size selected=system.inv_size localize=true}}</select> </div>
         <div class="flexcol"></div>
-        <div class="flexcol"><span class="d-flex" style="justify-content: flex-end;">Items in invetory: <span class="m-l-5"><h3 id="myH2" class="sheet">{{ system.inv_count}}</h3></span></span></div>
+        <div class="flexcol"><span class="d-flex" style="justify-content: flex-end;">{{localize "dnd.inv_count"}}:<span class="m-l-5"><h3 id="myH2" class="sheet">{{ system.inv_count}}</h3></span></span></div>
     </div>
 
 
 
 <table class="table table_main table_shadow item-list">
     <tr>
-       <th style="text-align:left;">Name</th> 
-       <th>Type</th>
-       <th>Quantity</th>
-       <th>Cost</th>
-       <th>Rarity</th>
-       <th>Controls</th>
+       <th style="text-align:left;">{{localize "dnd.inv_name"}}</th> 
+       <th>{{localize "dnd.inv_type"}}</th>
+       <th>{{localize "dnd.inv_quantity"}}</th>
+       <th>{{localize "dnd.cost"}}</th>
+       <th>{{localize "dnd.rariry"}}</th>
+       <th>{{localize "dnd.controls"}}</th>
 
     </tr>
     {{#each inv as |item id|}}
@@ -342,9 +342,9 @@
 
  </div>
 <div class="tab bio" data-group="primary" data-tab="bio"> 
-    <h2 class="sheet">Biography</h2>
+    <h2 class="sheet">{{localize "dnd.bio"}}</h2>
      {{editor actor_bio target="system.bio" button=true editable=editable}}
-     <h2 class="sheet" >Appearance</h2>
+     <h2 class="sheet" >{{localize "dnd.appearance"}}</h2>
      {{editor appearance target="system.appearance" button=true editable=editable}}
 
 

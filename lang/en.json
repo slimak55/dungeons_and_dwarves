@@ -1,18 +1,92 @@
 {
 
-"dnd": {
+"dnd.Name":"Name",
 
-	"weapon":{
-	"none": "",
-	"small":"Small",
-	"light":"Light",
-	"medium":"Medium",
-	"heavy":"Heavy",
-	"special":"Special"
+"dnd.Race":"Race",
+"dnd.Class":"Class",
+"dnd.classType_dex":"Agility",
+"dnd.classType_mix_str":"Mixed Strength",
+"dnd.classType_mix_dex":"Mixed Agility",
+"dnd.classType_int":"Magical",
+"dnd.classType_str":"Strength",
+"dnd.Test":"test",
+"dnd.xp":"XP",
+"dnd.Level":"Level",
 
-	}
+"dnd.Money":"Money",
+"dnd.Platinum":"Platinum",
+"dnd.Gold":"Gold",
+"dnd.Silver":"Silver",
+"dnd.Copper":"Copper",
 
-}
+"dnd.Strength":"Strength",
+"dnd.Dexterity":"Dexterity",
+"dnd.Inteligence":"Inteligence",
+"dnd.Charisma":"Charisma",
+"dnd.Perception":"Perception",
+
+"dnd.pro_bonus":"Proficiency bonus",
+"dnd.ac_bonus":"AC bonus",
+"dnd.pro_in":"Proficient in",
+"dnd.pro_Strength":"Strength",
+"dnd.pro_Dexterity":"Dexterity",
+"dnd.pro_Inteligence":"Inteligence",
+
+"dnd.hp_dice":"HP Dice",
+"dnd.mana_dice":"Mana Dice",
+
+"dnd.mana_type_str_dex":"None",
+
+"dnd.Exhaust":"Exhaust",
+"dnd.Dying":"Dying?",
+
+"dnd.hp":"HP",
+"dnd.mana":"Mana",
+"dnd.speed":"Speed",
+
+"dnd.tab_spell":"Skills/Spells",
+"dnd.tab_inv":"Gear & Inventory",
+"dnd.bio":"Biography",
+"dnd.tab_notes":"Notes",
+
+"dnd.inv_name":"Name",
+"dnd.s_damage":"Damage",
+"dnd.s_damage_mod":"Modifier",
+"dnd.s_w_range":"Range (ft.)",
+"dnd.s_aoe":"AoE",
+"dnd.s_damage_type":"Damage Type",
+"dnd.s_mana":"Mana/Cooldown (rounds)",
+"dnd.s_type":"Skill / Spell Type",
+"dnd.controls":"Controls",
+"dnd.w_equip":"Equiped Weapons",
+"dnd.w_dmg_roll":"Damage Roll",
+"dnd.w_dmg_mod":"Damage Modifier",
+"dnd.w_dmg_type":"Damage Type",
+"dnd.w_ammo":"Ammo",
+"dnd.a_equip":"Equiped Armour",
+"dnd.ac":"AC",
+"dnd.a_type":"Armor Type",
+"dnd.inv":"Inventory",
+"dnd.inv_type":"Type",
+"dnd.inv_quantity":"Quantity",
+"dnd.cost":"Cost",
+"dnd.rariry":"Rarity",
+"dnd.appearance":"Appearance",
+"dnd.inv_count":"Items in invetory",
+"dnd.a.equip_c_text":"Can equip",
+"dnd.w.equip_c_text":"Can equip",
+"dnd.a.equip_c_str":"Tier 3 and lower",
+"dnd.a.equip_c_int":"Tier 1 or Tier 2 with STR. >= 15",
+"dnd.a.equip_c_dex":"Tier 2 and lower or Tier 3 with STR. >= 15",
+"dnd.w.equip_c_str":"Tier 3 and lower or Tier 4 with STR. >= 15",
+"dnd.w.equip_c_int":"Tier 1 or Tier 2 with STR. >= 15",
+"dnd.w.equip_c_dex":"Tier 2 and lower or Tier 3 with STR. >= 15",
+
+"dnd.inv_size_tiny":"Tiny",
+"dnd.inv_size_small":"Small",
+"dnd.inv_size_medium":"Medium",
+"dnd.inv_size_big":"Big",
+"dnd.inv_size_infinite":"Infinite"
 
 
 }

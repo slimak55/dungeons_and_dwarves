@@ -120,20 +120,34 @@ _prepareCharacterData(actorData) {
 // Mana / HP dice types
 
   if (systemData.details.class_type === "str") {
-      systemData.hp_dice_type = "1d10"
-      systemData.mana_dice_type = "None"
+      systemData.hp_dice_type = "1d10";
+      systemData.mana_dice_type = game.i18n.localize("dnd.mana_type_str_dex");
+      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_str")
+      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_str")
     }
   else if (systemData.details.class_type === "dex") {
       systemData.hp_dice_type = "1d8"
-      systemData.mana_dice_type = "None"
+      systemData.mana_dice_type = game.i18n.localize("dnd.mana_type_str_dex");
+      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_dex")
+      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_dex")
     }
-   else if (systemData.details.class_type === "mixed") {
-      systemData.hp_dice_type = "1d8"
+   else if (systemData.details.class_type === "mixed_str") {
+      systemData.hp_dice_type = "1d8";
       systemData.mana_dice_type = "1d8*25"
+      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_str")
+      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_str")
+    }
+    else if (systemData.details.class_type === "mixed_dex") {
+      systemData.hp_dice_type = "1d8";
+      systemData.mana_dice_type = "1d8*25"
+      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_dex")
+      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_dex")
     }
   else if (systemData.details.class_type === "int") {
-      systemData.hp_dice_type = "1d6"
-      systemData.mana_dice_type = "1d12*25"
+      systemData.hp_dice_type = "1d6";
+      systemData.mana_dice_type = "1d12*25";
+      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_int")
+      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_int")
     }
 
 
