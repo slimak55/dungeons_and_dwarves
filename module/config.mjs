@@ -1,20 +1,20 @@
 export const dungeons_and_dwarves = {};
 
 dungeons_and_dwarves.weapon_type = {
-	none: "",
-	small:"Tier 1",
-	light:"Tier 2",
-	heavy:"Tier 3",
-	special:"Tier 4"
+	none: "dnd.none",
+	small:"dnd.tier_1",
+	light:"dnd.tier_2",
+	heavy:"dnd.tier_3",
+	special:"dnd.tier_4"
 
 
 }
 
 dungeons_and_dwarves.weapon_mod = {
-	none: "",
-	str:"Strength",
-	dex:"Dexterity",
-	int:"Inteligence"
+	none: "dnd.none",
+	str:"dnd.Strength",
+	dex:"dnd.Dexterity",
+	int:"dnd.Inteligence"
 
 
 
@@ -23,81 +23,81 @@ dungeons_and_dwarves.weapon_mod = {
 
 dungeons_and_dwarves.damage_type = {
 
-	none:"None",
-	bludgeoning:"Bludgeoning",
-	piercing:"Piercing",
-	slashing:"Slashing",
-	poison:"Poison",
-	acid:"Acid",
-	fire:"Fire",
-	cold:"Cold",
-	radiant:"Radiant",
-	necrotic:"Necrotic",
-	lighting:"Lighting",
-	thunder:"Thunder",
-	force:"Force",
-	psychic:"Psychic",
-	holy:"Holy",
-	dark:"Dark"
+	none:"dnd.none",
+	bludgeoning:"dnd.bludgeoning",
+	piercing:"dnd.piercing",
+	slashing:"dnd.slashing",
+	poison:"dnd.poison",
+	acid:"dnd.acid",
+	fire:"dnd.fire",
+	cold:"dnd.cold",
+	radiant:"dnd.radiant",
+	necrotic:"dnd.necrotic",
+	lighting:"dnd.lighting",
+	thunder:"dnd.thunder",
+	force:"dnd.force",
+	psychic:"dnd.psychic",
+	holy:"dnd.holy",
+	dark:"dnd.dark"
 
 
 }
 
 dungeons_and_dwarves.cost_type = {
 
-	cp:"CP",
-	sp:"SP",
-	gp:"GP",
-	pp:"PP"
+	cp:"dnd.abbr_Copper",
+	sp:"dnd.abbr_Silver",
+	gp:"dnd.abbr_Gold",
+	pp:"dnd.abbr_Platinum"
 
 
 }
 
 dungeons_and_dwarves.rarity = {
 
-	common:"Common",
-	uncommon:"Uncommon",
-	rare:"Rare",
-	epic:"Epic",
-	legendary:"Legendary"
+	common:"dnd.r_common",
+	uncommon:"dnd.r_uncommon",
+	rare:"dnd.r_rare",
+	epic:"dnd.r_epic",
+	legendary:"dnd.r_legendary"
 
 }
 
 dungeons_and_dwarves.c_type = {
 
-	none:"",
-	supplies:"Supplies",
-	potion:"Potion",
-	key:"Key",
-	tool:"Tool",
-	other:"Other"
+	other:"dnd.ct_other",
+	supplies:"dnd.ct_supplies",
+	potion:"dnd.ct_supplies",
+	key:"dnd.ct_key",
+	tool:"dnd.ct_tool"
+	
 
 
 }
 dungeons_and_dwarves.aoe = {
 
-	none:"None",
-	cone:"Cone",
-	cube:"Cube",
-	cylinder:"Cylinder",
-	line:"Line",
-	sphere:"Sphere"
+	none:"dnd.none",
+	cone:"dnd.cone",
+	cube:"dnd.cube",
+	cylinder:"dnd.cylinder",
+	line:"dnd.line",
+	sphere:"dnd.sphere"
 
 }
 dungeons_and_dwarves.s_type = {
 
-	normal:"Normal",
-	reactional:"Reactional",
-	passive:"Passive"
+	normal:"dnd.st_normal",
+	reactional:"dnd.st_reactional",
+	passive:"dnd.st_passive"
 
 }
 
 
 dungeons_and_dwarves.armor_type = {
 
-	light:"Light",
-	medium:"Medium",
-	heavy:"Heavy"
+	light:"dnd.a.light",
+	medium:"dnd.a.medium",
+	heavy:"dnd.a.heavy"
 
 }
 dungeons_and_dwarves.CHARACTER_EXP_LEVELS = [
@@ -117,9 +117,9 @@ dungeons_and_dwarves.inv_size = {
 }
 dungeons_and_dwarves.s_level = {
 
-	normal:"Normal",
-	expert:"Expert",
-	profesional:"Profesional"
+	normal:"dnd.sl_normal",
+	expert:"dnd.sl_expert",
+	profesional:"dnd.sl_pro"
 }
 
 

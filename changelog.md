@@ -1,4 +1,4 @@
-# Changelog pre v.0.9
+# Changelog pre v.0.9.5
 
 - Bug fix: Ranged weapon sheet titles
 - NEW! Types of weapons and armor, character can use base on class

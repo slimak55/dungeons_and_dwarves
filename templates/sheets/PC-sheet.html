@@ -190,19 +190,16 @@
      <div class="flexcol">
         <div class="flexrow">
             <div class="flexcol">
-        <span class="d-flex"><a class="button-22-green center on-success" style="width:75px; height:25px;">Success</a> <span class="m-l-5 d-flex">Count: <h3 class="sheet m-l-5">{{ system.dying.success}}</h3></span></span>
+                <span class="d-flex"><a class="button-22-green center on-success" style="width:75px; height:25px;">{{localize "dnd.succ"}}</a> <span class="m-l-5 d-flex">{{localize "dnd.st_count"}}:<h3 class="sheet m-l-5">{{system.dying.success}}</h3></span></span>
 
-        <span class="d-flex m-t-10"><a class="button-22-red center on-fail" style="width:75px; height:25px;">Failure</a> <span class="m-l-5 d-flex">Count: <h3 class="sheet m-l-5"> {{system.dying.failure}}</h3></span></span></div>
-        <div class="flexcol"><h2 class="sheet center">{{system.dying.isDead}}</h2></div>
+                <span class="d-flex m-t-10"><a class="button-22-red center on-fail" style="width:75px; height:25px;">{{localize "dnd.fail"}}</a> <span class="m-l-5 d-flex">{{localize "dnd.st_count"}}: <h3 class="sheet m-l-5"> {{system.dying.failure}}</h3></span></span></div>
+            <div class="flexcol"><h2 class="sheet center">{{system.dying.isDead}}</h2></div>
         </div>
 
-         <span class=" m-t-10"><a class="button-22 center on-reset" style="width:75px; height:25px;">Reset</a></span>
-
+         <span class=" m-t-10"><a class="button-22 center on-reset" style="width:75px; height:25px;">{{localize "dnd.reset"}}</a></span>
 
      </div>
      <div class="flexcol"></div>
-
-
  </div>
 
 {{/if}}

@@ -224,16 +224,16 @@ _prepareCharacterData(actorData) {
       }
 
     if(systemData.inv_size === "tiny" && item_count > 10 ){
-     systemData.inv_count = "Overlimit" +"("+ item_count + ")";
+     systemData.inv_count = game.i18n.localize("dnd.Overlimit") +"("+ item_count + ")";
     }
     else if(systemData.inv_size === "small" && item_count > 15 ){
-     systemData.inv_count = "Overlimit" +"("+ item_count + ")";
+     systemData.inv_count = game.i18n.localize("dnd.Overlimit") +"("+ item_count + ")";
     }
     else if (systemData.inv_size === "medium" && item_count > 25 ) {
-      systemData.inv_count = "Overlimit" +"("+ item_count + ")";
+      systemData.inv_count = game.i18n.localize("dnd.Overlimit") +"("+ item_count + ")";
     }
     else if (systemData.inv_size === "big" && item_count > 50 ) {
-      systemData.inv_count = "Overlimit" +"("+ item_count + ")";
+      systemData.inv_count = game.i18n.localize("dnd.Overlimit") +"("+ item_count + ")";
     }
     else{
 

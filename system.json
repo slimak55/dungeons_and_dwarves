@@ -2,7 +2,7 @@
   "id": "dungeons-and-dwarves",
   "title": "Dungeons & Dwarves",
   "description": "System for DnD 5e variations Dungeons & Dwarves",
-  "version": "0.8.5",
+  "version": "0.9",
   "compatibility": {
     "minimum": "11",
     "verified": "11.313",
@@ -10,7 +10,7 @@
   },
   "url": "https://github.com/slimak55/dungeons_and_dwarves",
    "manifest": "https://raw.githubusercontent.com/slimak55/dungeons_and_dwarves/main/system.json",
-   "download": "https://github.com/slimak55/dungeons_and_dwarves/releases/download/release_0.8.5/dungeons_and_dwarves-release_0.8.5.zip",
+   "download": "https://github.com/slimak55/dungeons_and_dwarves/releases/download/release_0.9/dungeons_and_dwarves-release_0.9.zip",
   "esmodules": ["dwarves.js"],
   "styles": [
     "styles/style.css"

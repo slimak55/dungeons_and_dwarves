@@ -173,7 +173,7 @@
     "armor_type":"",
     "ac_armor":0,
     "ac_mod":0,
-     "cost":0,
+    "cost":0,
     "cost_type":"",
     "quantity":0,
     "eq":false,

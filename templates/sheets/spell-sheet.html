@@ -4,46 +4,46 @@
         <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
     </header>
    <div class="flexrow">
-    <h2 class="box_w sheet">Spell Info</h2>
+    <h2 class="box_w sheet">{{localize "dnd.sp_info"}}</h2>
       </div>
       <div class="flexrow">
     <table class="table_main table_shadow">
   <tr>
-    <td class="bold">Spell Damage:</td>
+    <td class="bold">{{localize "dnd.sp_damage"}}:</td>
     <td><input name="system.damage" type="text" value="{{system.damage}}"/></td>
-     <td class="bold">Damage Modifier:</td>
-     <td><select name="system.weapon_mod"> {{selectOptions config.weapon_mod selected=system.weapon_mod}}</select></td>
-     <td class="bold">Unique Modifier:</td>
+     <td class="bold">{{localize "dnd.s_dmg_mod"}}:</td>
+     <td><select name="system.weapon_mod"> {{selectOptions config.weapon_mod selected=system.weapon_mod localize=true}}</select></td>
+     <td class="bold">{{localize "dnd.u_mod"}}:</td>
      <td><input name="system.mod" type="text" value="{{system.mod}}" data-dtype="Number"/></td>
   </tr>
    <tr>
-     <td class="bold">Damage Type:</td>
-     <td><select name="system.damage_type"> {{selectOptions config.damage_type selected=system.damage_type}}</select></td>
-    <td class="bold">Mana Cost:</td>
+     <td class="bold">{{localize "dnd.s_damage_type"}}:</td>
+     <td><select name="system.damage_type"> {{selectOptions config.damage_type selected=system.damage_type localize=true}}</select></td>
+    <td class="bold">{{localize "dnd.c_mana"}}:</td>
     <td><input name="system.mana_cost" type="text" value="{{system.mana_cost}}" data-dtype="Number"/></td>
-      <td class="bold">Spell Type:</td>
-    <td><select name="system.s_type"> {{selectOptions config.s_type selected=system.s_type}}</select></td>
+      <td class="bold">{{localize "dnd.sp_type"}}:</td>
+    <td><select name="system.s_type"> {{selectOptions config.s_type selected=system.s_type localize=true}}</select></td>
     </tr>
     <tr>
-      <td class="bold">Spell Level:</td>
-      <td><select name="system.s_level"> {{selectOptions config.s_level selected=system.s_level}}</select></td>
+      <td class="bold">{{localize "dnd.sp_level"}}:</td>
+      <td><select name="system.s_level"> {{selectOptions config.s_level selected=system.s_level localize=true}}</select></td>
     </tr>
   <tr>
-      <td class="bold">Range: (ft.)</td>
+      <td class="bold">{{localize "dnd.s_w_range"}}</td>
      <td><input name="system.range" type="text" value="{{system.range}}"/></td>
-     <td class="bold">AoE:</td>
-      <td><select name="system.aoe"> {{selectOptions config.aoe selected=system.aoe}}</select></td>
-      <td class="bold">AoE Range: (tf.)</td>
+     <td class="bold">{{localize "dnd.s_aoe"}}:</td>
+      <td><select name="system.aoe"> {{selectOptions config.aoe selected=system.aoe localize=true}}</select></td>
+      <td class="bold">{{localize "dnd.sp_aoe_range"}}</td>
       <td><input name="system.aoe_range" type="text" value="{{system.aoe_range}}"/></td>
   </tr>
   <tr>
-    <td class="bold">Cast time (actions)</td>
+    <td class="bold">{{localize "dnd.cast_time"}}</td>
     <td><input name="system.cast_time" type="text" value="{{system.cast_time}}" data-dtype="Number"/></td>
   </tr>
 </table>
  </div>
      <div class="flexrow">
-<h2 class="sheet">Description</h2>
+<h2 class="sheet">{{localize "dnd.desc"}}</h2>
 </div>
 <div class="flexrow">
  {{editor item.info target="system.info" rollData=rollData button=true editable=editable}}

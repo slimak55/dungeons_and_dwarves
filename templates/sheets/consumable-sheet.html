@@ -4,30 +4,30 @@
         <h1><input name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'Name' }}"/></h1>
     </header>
    <div class="flexrow">
-    <h2 class="sheet">Basic Effects and Info</h2>
+    <h2 class="sheet">{{localize "dnd.b_eai"}}</h2>
       </div>
        <div class="flexrow">
       <table class="table_main table_shadow">
   <tr>
-    <td class="bold">Effect power:</td>
+    <td class="bold">{{localize "dnd.e_power"}}:</td>
     <td><input name="system.damage" type="text" value="{{system.damage}}"/></td>
-     <td class="bold">Type of Item:</td>
-     <td><select name="system.c_type"> {{selectOptions config.c_type selected=system.c_type}}</select></td>
+     <td class="bold">{{localize "dnd.t_oi"}}:</td>
+     <td><select name="system.c_type"> {{selectOptions config.c_type selected=system.c_type localize=true}}</select></td>
   </tr>
       <tr>
-     <td class="bold">Quantity:</td>
+     <td class="bold">{{localize "dnd.inv_quantity"}}:</td>
     <td><input name="system.quantity" type="text" value="{{system.quantity}}" data-dtype="Number"/></td>
-    <td class="bold">Cost:</td>
+    <td class="bold">{{localize "dnd.cost"}}:</td> 
     <td><input name="system.cost" type="text" value="{{system.cost}}" data-dtype="Number"/></td>
-    <td><select name="system.cost_type"> {{selectOptions config.cost_type selected=system.cost_type}}</select></td>
-    <td class="bold">Rarity:</td>
-    <td><select name="system.rarity"> {{selectOptions config.rarity selected=system.rarity}}</select></td>
+    <td><select name="system.cost_type"> {{selectOptions config.cost_type selected=system.cost_type localize=true}}</select></td>
+    <td class="bold">{{localize "dnd.rariry"}}:</td>
+    <td><select name="system.rarity"> {{selectOptions config.rarity selected=system.rarity localize=true}}</select></td>
   </tr>
 </table>
  </div>
 
      <div class="flexrow">
-<h2 class="sheet">Effects or Description</h2>
+<h2 class="sheet">{{localize "dnd.con_desc"}}</h2>
 </div>
 <div class="flexrow">
  {{editor item.info target="system.info" button=true editable=editable}}

@@ -18,6 +18,10 @@
 "dnd.Gold":"Gold",
 "dnd.Silver":"Silver",
 "dnd.Copper":"Copper",
+"dnd.abbr_Platinum":"PP",
+"dnd.abbr_Gold":"GP",
+"dnd.abbr_Silver":"SP",
+"dnd.abbr_Copper":"CP",
 
 "dnd.Strength":"Strength",
 "dnd.Dexterity":"Dexterity",
@@ -89,6 +93,103 @@
 "dnd.inv_size_infinite":"Infinite",
 
 "dnd.isDead":"Dead",
-"dnd.isAlive":"Stabilized"
+"dnd.isAlive":"Stabilized",
+"dnd.isDying":"Dying",
+"dnd.st_count":"Count",
+"dnd.succ":"Success",
+"dnd.fail":"Failure",
+"dnd.reset":"Reset",
+
+"dnd.Overlimit":"Overlimit",
+
+"dnd.a.light":"Light",
+"dnd.a.medium":"Medium",
+"dnd.a.heavy":"Heavy",
+
+"dnd.none":"None",
+
+"dnd.sl_normal":"Normal",
+"dnd.sl_expert":"Expert",
+"dnd.sl_pro":"Professional",
+
+"dnd.st_normal":"Normal",
+"dnd.st_reactional":"Reactional",
+"dnd.st_passive":"Passive",
+
+"dnd.cone":"Cone",
+"dnd.cube":"Cube",
+"dnd.cylinder":"Cylinder",
+"dnd.line":"Line",
+"dnd.sphere":"Sphere",
+
+"dnd.ct_other":"Other",
+"dnd.ct_supplies":"Supplies",
+"dnd.ct_potion":"Potion",
+"dnd.ct_key":"Key",
+"dnd.ct_tool":"Tool",
+
+"dnd.r_common":"Common",
+"dnd.r_uncommon":"Uncommon",
+"dnd.r_rare":"Rare",
+"dnd.r_epic":"Epic",
+"dnd.r_legendary":"Legendary",
+
+"dnd.bludgeoning":"Bludgeoning",
+"dnd.piercing":"Piercing",
+"dnd.slashing":"Slashing",
+"dnd.poison":"Poison",
+"dnd.acid":"Acid",
+"dnd.fire":"Fire",
+"dnd.cold":"Cold",
+"dnd.radiant":"Radiant",
+"dnd.necrotic":"Necrotic",
+"dnd.lighting":"Lighting",
+"dnd.thunder":"Thunder",
+"dnd.force":"Force",
+"dnd.psychic":"Psychic",
+"dnd.holy":"Holy",
+"dnd.dark":"Dark",
+
+"dnd.tier_1":"Tier 1",
+"dnd.tier_2":"Tier 2",
+"dnd.tier_3":"Tier 3",
+"dnd.tier_4":"Tier 4",
+
+"dnd.a_info":"Armour Info",
+"dnd.u_mod":"Unique Modifier",
+"dnd.isEquipped":"Is Equipped?",
+"dnd.desc":"Description",
+
+"dnd.b_eai":"Basic Effects and Info",
+"dnd.e_power": "Effect power",
+"dnd.t_oi":"Type of Item",
+"dnd.con_desc":"Effects or Description",
+
+"dnd.mod":"Modifier",
+"dnd.value":"Value",
+"dnd.hit_mod":"Hit Modifier",
+
+"dnd.w_info":"Weapon Info",
+"dnd.w_damage": "Weapon Damage",
+"dnd.w_type":"Weapon Type",
+"dnd.b_info":"Basic Info",
+
+"dnd.ammo_type":"Type",
+
+"dnd.sk_info":"Skill Info",
+"dnd.sk_damage": "Skill Damage",
+"dnd.s_dmg_mod":"Damage Modifier",
+"dnd.sk_type":"Skill Type",
+"dnd.sk_cooldown":"Cooldown: (rounds)",
+
+"dnd.sp_info":"Spell Info",
+"dnd.sp_damage": "Spell Damage",
+"dnd.c_mana":"Mana cost",
+"dnd.sp_type":"Spell Type",
+"dnd.sp_level":"Spell Level",
+"dnd.sp_aoe_range":"AoE Range: (tf.)",
+"dnd.cast_time":"Cast time (actions)"
+
+
 
 }

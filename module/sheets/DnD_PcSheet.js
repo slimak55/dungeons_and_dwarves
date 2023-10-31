@@ -178,7 +178,7 @@ _onReset(event){
 this.document.update({'system.dying.success' : 0 });
 this.document.update({'system.dying.failure' : 0 });
 this.document.update({'system.dying.isDying' : false });
-this.document.update({'system.dying.isDead' : "Dying" });
+this.document.update({'system.dying.isDead' : game.i18n.localize("dnd.isDying") });
 
 }
 

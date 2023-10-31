@@ -17,6 +17,10 @@
 "dnd.Gold":"Zlaťáky",
 "dnd.Silver":"Stříbrňáky",
 "dnd.Copper":"Měďáky",
+"dnd.abbr_Platinum":"PL",
+"dnd.abbr_Gold":"ZL",
+"dnd.abbr_Silver":"ST",
+"dnd.abbr_Copper":"MD",
 
 "dnd.Strength":"Síla",
 "dnd.Dexterity":"Obratnost",
@@ -87,8 +91,103 @@
 "dnd.inv_size_big":"Velký",
 "dnd.inv_size_infinite":"Nekonečný",
 
-"dnd.isDead":"Dead",
-"dnd.isAlive":"Stabilized"
+"dnd.isDead":"Mrtvý",
+"dnd.isAlive":"Stabilizovaný",
+"dnd.isDying":"Umírající",
+"dnd.st_count":"Počet",
+"dnd.succ":"Úspěch",
+"dnd.fail":"Neúspěch",
+"dnd.reset":"Reset",
+
+"dnd.Overlimit":"Přes limit",
+
+"dnd.a.light":"Light",
+"dnd.a.medium":"Medium",
+"dnd.a.heavy":"Heavy",
+
+"dnd.none":"Žádná",
+
+"dnd.sl_normal":"Normální",
+"dnd.sl_expert":"Expertní",
+"dnd.sl_pro":"Profesionílní",
+
+"dnd.st_normal":"Normálné",
+"dnd.st_reactional":"Reakční",
+"dnd.st_passive":"Pasivní",
+
+"dnd.cone":"Kužel",
+"dnd.cube":"Kostka",
+"dnd.cylinder":"Válec",
+"dnd.line":"Linka",
+"dnd.sphere":"Koule",
+
+"dnd.ct_other":"Ostatní",
+"dnd.ct_supplies":"Zásoby",
+"dnd.ct_potion":"Lektvar",
+"dnd.ct_key":"Klíč",
+"dnd.ct_tool":"Nástroj",
+
+"dnd.r_common":"Obyčejná",
+"dnd.r_uncommon":"Neobyčejná",
+"dnd.r_rare":"Vzácná",
+"dnd.r_epic":"Epická",
+"dnd.r_legendary":"Legendární",
+
+"dnd.bludgeoning":"Drtivé",
+"dnd.piercing":"Bodné",
+"dnd.slashing":"Sečné",
+"dnd.poison":"Jedové",
+"dnd.acid":"Kyselinové",
+"dnd.fire":"Ohnivé",
+"dnd.cold":"Ledové",
+"dnd.radiant":"Zářivé",
+"dnd.necrotic":"Neckrotické",
+"dnd.lighting":"Bleskové",
+"dnd.thunder":"Hromové",
+"dnd.force":"Silové",
+"dnd.psychic":"Psychické",
+"dnd.holy":"Svaté",
+"dnd.dark":"Temné",
+
+"dnd.tier_1":"Stupeň 1",
+"dnd.tier_2":"Stupeň 2",
+"dnd.tier_3":"Stupeň 3",
+"dnd.tier_4":"Stupeň 4",
+
+"dnd.a_info":"Info o Brnění",
+"dnd.u_mod":"Unikátní Modifikátor",
+"dnd.isEquipped":"Je Vybaveno?",
+"dnd.desc":"Popis",
+
+"dnd.b_eai":"Základní Efekty a Info",
+"dnd.e_power": "Síla Efektu",
+"dnd.t_oi":"Typ věci",
+"dnd.con_desc":"Efekt nebo Popis",
+
+"dnd.mod":"Modifikátor",
+"dnd.value":"Hodnota",
+"dnd.hit_mod":"Hit Modifikátor",
+
+"dnd.w_info":"Info Zbrani",
+"dnd.w_damage": "Zranění Zbraně",
+"dnd.w_type":"Typ Zbraně",
+"dnd.b_info":"Základní Info",
+
+"dnd.ammo_type":"Typ",
+
+"dnd.sk_info":"Info o Schopnosti",
+"dnd.sk_damage": "Zranění Schopnosti",
+"dnd.s_dmg_mod":"Modifikátor Zranění",
+"dnd.sk_type":"Typ Schopnosti",
+"dnd.sk_cooldown":"Obnova: (kola)",
+
+"dnd.sp_info":"Informace o Kouzle",
+"dnd.sp_damage": "Zranění Kouzla",
+"dnd.c_mana":"Cena v Maně",
+"dnd.sp_type":"Typ Kouzla",
+"dnd.sp_level":"Úroveň Kouzla",
+"dnd.sp_aoe_range":"AoE Dosah: (tf.)",
+"dnd.cast_time":"Doba Kouzlení (akce)"
 
 
 }
