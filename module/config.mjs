@@ -6,8 +6,6 @@ dungeons_and_dwarves.weapon_type = {
 	light:"dnd.tier_2",
 	heavy:"dnd.tier_3",
 	special:"dnd.tier_4"
-
-
 }
 
 dungeons_and_dwarves.weapon_mod = {
@@ -15,11 +13,7 @@ dungeons_and_dwarves.weapon_mod = {
 	str:"dnd.Strength",
 	dex:"dnd.Dexterity",
 	int:"dnd.Inteligence"
-
-
-
 }
-
 
 dungeons_and_dwarves.damage_type = {
 
@@ -39,8 +33,6 @@ dungeons_and_dwarves.damage_type = {
 	psychic:"dnd.psychic",
 	holy:"dnd.holy",
 	dark:"dnd.dark"
-
-
 }
 
 dungeons_and_dwarves.cost_type = {
@@ -49,8 +41,6 @@ dungeons_and_dwarves.cost_type = {
 	sp:"dnd.abbr_Silver",
 	gp:"dnd.abbr_Gold",
 	pp:"dnd.abbr_Platinum"
-
-
 }
 
 dungeons_and_dwarves.rarity = {
@@ -60,7 +50,6 @@ dungeons_and_dwarves.rarity = {
 	rare:"dnd.r_rare",
 	epic:"dnd.r_epic",
 	legendary:"dnd.r_legendary"
-
 }
 
 dungeons_and_dwarves.c_type = {
@@ -70,9 +59,6 @@ dungeons_and_dwarves.c_type = {
 	potion:"dnd.ct_supplies",
 	key:"dnd.ct_key",
 	tool:"dnd.ct_tool"
-	
-
-
 }
 dungeons_and_dwarves.aoe = {
 
@@ -82,23 +68,19 @@ dungeons_and_dwarves.aoe = {
 	cylinder:"dnd.cylinder",
 	line:"dnd.line",
 	sphere:"dnd.sphere"
-
 }
 dungeons_and_dwarves.s_type = {
 
 	normal:"dnd.st_normal",
 	reactional:"dnd.st_reactional",
 	passive:"dnd.st_passive"
-
 }
-
 
 dungeons_and_dwarves.armor_type = {
 
 	light:"dnd.a.light",
 	medium:"dnd.a.medium",
 	heavy:"dnd.a.heavy"
-
 }
 dungeons_and_dwarves.CHARACTER_EXP_LEVELS = [
   0, 300, 900, 2700, 6500, 14000, 23000, 34000, 48000, 64000, 85000, 100000,
@@ -112,8 +94,6 @@ dungeons_and_dwarves.inv_size = {
 	medium:"dnd.inv_size_medium",
 	big:"dnd.inv_size_big",
 	infinite:"dnd.inv_size_infinite"
-
-
 }
 dungeons_and_dwarves.s_level = {
 

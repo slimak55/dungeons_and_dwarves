@@ -1,158 +1,125 @@
 export default class DnD_PcSheet extends ActorSheet {
 	get template() {
-		return `systems/dungeons-and-dwarves/templates/sheets/${this.actor.type}-sheet.html`; }
-
-		static get defaultOptions() {
+		return `systems/dungeons-and-dwarves/templates/sheets/${this.actor.type}-sheet.html`; 
+  }
+	static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-
- 			width: 1000,
- 			height:1000,
- 			tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "skills" }],
+      width: 1000,
+      height:1000,
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "skills" }],
       dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
-   
-
     });
   }
 
-
-  	async getData() {
-
-			 const context = super.getData();
-
-			 const actorData = this.actor.toObject(false);
-
-    		// Add the actor's data to context.data for easier access, as well as flags.
-    		context.system = actorData.system;
-    		context.flags = actorData.flags;
-			 context.config = CONFIG.dungeons_and_dwarves;
-			 context.items = actorData.items
-
-			 context.notes = await TextEditor.enrichHTML(this.object.system.notes, {async: true});
-
-			 context.actor_bio = await TextEditor.enrichHTML(this.object.system.bio, {async: true});
-			 context.appearance = await TextEditor.enrichHTML(this.object.system.appearance, {async: true});
-
-			if (actorData.type == 'PC') {
+  async getData() {
+    const context = super.getData();
+		const actorData = this.actor.toObject(false);
+    // Add the actor's data to context.data for easier access, as well as flags.
+    context.system = actorData.system;
+    context.flags = actorData.flags;
+		context.config = CONFIG.dungeons_and_dwarves;
+		context.items = actorData.items
+		context.notes = await TextEditor.enrichHTML(this.object.system.notes, {async: true});
+		context.actor_bio = await TextEditor.enrichHTML(this.object.system.bio, {async: true});
+		context.appearance = await TextEditor.enrichHTML(this.object.system.appearance, {async: true});
+		if (actorData.type == 'PC') {
       this._prepareItems(context);
       //this._prepareCharacterData(context);
     }
-
-    	if (actorData.type == 'Enemy') {
+    if (actorData.type == 'Enemy') {
       this._prepareEnemyItems(context);
       //this._prepareCharacterData(context);
     }
- 
-			 return context;
+    return context;
+	}
 
-			}
+  _prepareItems(context) {
+    const inv = [];
+    const skills = [];
+    const eq_weapon = [];
+    const eq_armor =  [];	
 
-_prepareItems(context) {
-	const inv = [];
-	const skills = [];
-	const eq_weapon = [];
-	const eq_armor =  [];
-		
-
-
-
-
-
-	for (let i of context.items) {
-
+    for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
       // Append to weapons.
       if (i.type === 'melee_weapon' || i.type === 'range_weapon') {
-      	if (i.system.eq === true) {
-      		eq_weapon.push(i);
-      	}
-      	else {
-      		inv.push(i);
-      	}
+        if (i.system.eq === true) {
+          eq_weapon.push(i);
+        }
+        else {
+          inv.push(i);
+        }
       }
       // Append to weapons.
       if (i.type === 'armor') {
-        	if (i.system.eq === true) {
-      		eq_armor.push(i);
-      	}
-      	else {
-      		inv.push(i);
-      	}
+        if (i.system.eq === true) {
+          eq_armor.push(i);
+        }
+        else {
+          inv.push(i);
+        }
       }
-       // Append to spells.
+      // Append to spells.
       else if (i.type === 'spell' || i.type === 'skill') { 
-          skills.push(i);
+        skills.push(i);
       }
       // Append to consumable.
       else if (i.type === 'consumable') {
         inv.push(i);
       }
     }
-
 
     context.inv = inv;
     context.eq_armor = eq_armor;
     context.eq_weapon = eq_weapon;
     context.skills = skills;
-}
+  }
 
-_prepareEnemyItems(context) {
+  _prepareEnemyItems(context) {
 
-	const inv = [];
-	const skills = [];
+    const inv = [];
+    const skills = [];
 
-	for (let i of context.items) {
-
+    for (let i of context.items) {
       i.img = i.img || DEFAULT_TOKEN;
       // Append to weapons.
       if (i.type === 'melee_weapon' || i.type === 'range_weapon') {
-
-      		inv.push(i);
+        inv.push(i);
       }
-       // Append to spells.
+      // Append to spells.
       else if (i.type === 'spell' || i.type === 'skill') { 
-          skills.push(i);
+        skills.push(i);
       }
       // Append to consumable.
       else if (i.type === 'consumable') {
         inv.push(i);
       }
     }
-
-
-
-
-
-
-	 context.inv = inv;
-	 context.skills = skills;
-	}
-
+    context.inv = inv;
+    context.skills = skills;
+  }
 	
- activateListeners(html) {
+  activateListeners(html) {
     super.activateListeners(html);
-
     // Render the item sheet for viewing/editing prior to the editable check.
     html.find('.item-edit').click(ev => {
       const li = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(li.data("itemId"));
       item.sheet.render(true);
     });
-       // -------------------------------------------------------------
+    // -------------------------------------------------------------
     // Everything below here is only needed if the sheet is editable
     if (!this.isEditable) return;
-
-       // Delete Inventory Item
+    // Delete Inventory Item
     html.find('.item-delete').click(ev => {
       const tr = $(ev.currentTarget).parents(".item");
       const item = this.actor.items.get(tr.data("itemId"));
       item.delete();
       tr.slideUp(200, () => this.render(false));
     });
-
     const inputs = html.find("input");
     inputs.focus(ev => ev.currentTarget.select());
     inputs.addBack().find('[type="text"][data-dtype="Number"]').change(this._onChangeInputDelta.bind(this));
-
 
     html.find('.in-edit').change(this._onQuantityChange.bind(this));
 
@@ -170,30 +137,22 @@ _prepareEnemyItems(context) {
 
     html.find('.on-reset').click(this._onReset.bind(this))
 
-	}
+  }
 
+  _onReset(event){
+    this.document.update({'system.dying.success' : 0 });
+    this.document.update({'system.dying.failure' : 0 });
+    this.document.update({'system.dying.isDying' : false });
+    this.document.update({'system.dying.isDead' : game.i18n.localize("dnd.isDying") });
+  }
 
-_onReset(event){
+  _onSuccess(event){
+    this.document.update({'system.dying.success' : this.document.system.dying.success + 1 })
+  }
 
-this.document.update({'system.dying.success' : 0 });
-this.document.update({'system.dying.failure' : 0 });
-this.document.update({'system.dying.isDying' : false });
-this.document.update({'system.dying.isDead' : game.i18n.localize("dnd.isDying") });
-
-}
-
-_onSuccess(event){
-
-this.document.update({'system.dying.success' : this.document.system.dying.success + 1 })
-
-}
-
-_onFail(event) {
-
-
-  this.document.update({'system.dying.failure' : this.document.system.dying.failure + 1 })
-
-}
+  _onFail(event) {
+    this.document.update({'system.dying.failure' : this.document.system.dying.failure + 1 })
+  }
 
   _onToggleItem(event) {
     event.preventDefault();
@@ -203,7 +162,7 @@ _onFail(event) {
     return item.update({[attr]: !foundry.utils.getProperty(item, attr)});
   }
 
-	_onChangeInputDelta(event) {
+  _onChangeInputDelta(event) {
     const input = event.target;
     const value = input.value;
     if ( ["+", "-"].includes(value[0]) ) {
@@ -211,7 +170,8 @@ _onFail(event) {
       const item = this.actor.items.get(input.closest("[data-item-id]")?.dataset.itemId);
       if ( item ) input.value = Number(foundry.utils.getProperty(item, input.dataset.name)) + delta;
       else input.value = Number(foundry.utils.getProperty(this.actor, input.name)) + delta;
-    } else if ( value[0] === "=" ) input.value = value.slice(1);
+      } 
+    else if ( value[0] === "=" ) input.value = value.slice(1);
   }
 
 
@@ -248,7 +208,7 @@ _onFail(event) {
     const element = event.currentTarget;
     const dataset = element.dataset;
 
-    // Handle item rolls.
+  // Handle item rolls.
     if (dataset.rollType) {
       if (dataset.rollType == 'item') {
         const itemId = element.closest('.item').dataset.itemId;

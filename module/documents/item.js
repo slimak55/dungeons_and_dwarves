@@ -1,15 +1,12 @@
 export class DnD_Item extends Item {
 
-
   prepareData() {
     // As with the actor class, items are documents that can have their data
     // preparation methods overridden (such as prepareBaseData()).
     super.prepareData();
   }
 
-
-
-prepareDerivedData() {
+  prepareDerivedData() {
     const itemData = this;
     const systemData = itemData.system;
     const flags = itemData.flags.dungeons_and_dwarves || {};
@@ -17,19 +14,16 @@ prepareDerivedData() {
     // Make separate methods for each Actor type (character, npc, etc.) to keep
     // things organized.
     this._prepareArmourData(itemData);
-    
+  }
 
+  _prepareArmourData(itemData) {
+    if (itemData.type !== 'armor') return;
+    const systemData = itemData.system;
+    systemData.ac_full = systemData.ac_armor + systemData.ac_mod;
   }
 
 
-_prepareArmourData(itemData) {
-	if (itemData.type !== 'armor') return;
-	const systemData = itemData.system;
-  	systemData.ac_full = systemData.ac_armor + systemData.ac_mod;
-}
-
-
-getRollData() {
+  getRollData() {
     // If present, return the actor's roll data.
     if ( !this.actor ) return null;
     const rollData = this.actor.getRollData();
@@ -38,6 +32,4 @@ getRollData() {
 
     return rollData;
   }
-
-
 }

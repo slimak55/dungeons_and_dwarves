@@ -1,13 +1,12 @@
 export class DnD_Actor extends Actor {
 
- prepareData() {
+  prepareData() {
     // Prepare data for the actor. Calling the super version of this executes
     // the following, in order: data reset (to clear active effects),
     // prepareBaseData(), prepareEmbeddedDocuments() (including active effects),
     // prepareDerivedData().
     super.prepareData();
   }
-
 
   prepareDerivedData() {
     const actorData = this;
@@ -21,143 +20,110 @@ export class DnD_Actor extends Actor {
     this._prepareEnemyData(actorData);
   }
 
+  _prepareCharacterData(actorData) {
 
-_prepareCharacterData(actorData) {
+    if (actorData.type !== 'PC') return;
 
-	if (actorData.type !== 'PC') return;
+    const systemData = actorData.system;
 
-	const systemData = actorData.system;
+    //Ability Modifiers
+    if (systemData.abilities.str.proficient === false) {
+      systemData.abilities.str.mod = Math.floor((systemData.abilities.str.value - 10) / 2);
+    }
+    else {
+      const pro_value = systemData.abilities.str.value + systemData.pro_bonus;
+      systemData.abilities.str.mod = Math.floor((pro_value - 10) / 2);
+    }
+    if (systemData.abilities.dex.proficient === false) {
+      systemData.abilities.dex.mod = Math.floor((systemData.abilities.dex.value - 10) / 2);
+    }
+    else {
+      const pro_value = systemData.abilities.dex.value + systemData.pro_bonus;
+      systemData.abilities.dex.mod = Math.floor((pro_value - 10) / 2);
+    }
+    if (systemData.abilities.int.proficient === false) {
+      systemData.abilities.int.mod = Math.floor((systemData.abilities.int.value - 10) / 2);
+    }
+    else {
+      const pro_value = systemData.abilities.int.value + systemData.pro_bonus;
+      systemData.abilities.int.mod = Math.floor((pro_value - 10) / 2);
+    }
 
+    systemData.abilities.cha.mod = Math.floor((systemData.abilities.cha.value - 10) / 2);
+    systemData.abilities.per.mod = Math.floor((systemData.abilities.per.value - 10) / 2);
 
-  //Ability Modifiers
-  if (systemData.abilities.str.proficient === false) {
-    systemData.abilities.str.mod = Math.floor((systemData.abilities.str.value - 10) / 2);
-  }
-  else {
-
-    const pro_value = systemData.abilities.str.value + systemData.pro_bonus;
-    systemData.abilities.str.mod = Math.floor((pro_value - 10) / 2);
-  }
-  if (systemData.abilities.dex.proficient === false) {
-    systemData.abilities.dex.mod = Math.floor((systemData.abilities.dex.value - 10) / 2);
-    
-  }
-  else {
-
-    const pro_value = systemData.abilities.dex.value + systemData.pro_bonus;
-    systemData.abilities.dex.mod = Math.floor((pro_value - 10) / 2);
-  }
-   if (systemData.abilities.int.proficient === false) {
-    systemData.abilities.int.mod = Math.floor((systemData.abilities.int.value - 10) / 2);
-    
-  }
-  else {
-
-    const pro_value = systemData.abilities.int.value + systemData.pro_bonus;
-    systemData.abilities.int.mod = Math.floor((pro_value - 10) / 2);
-  }
-
-
-  systemData.abilities.cha.mod = Math.floor((systemData.abilities.cha.value - 10) / 2);
-  systemData.abilities.per.mod = Math.floor((systemData.abilities.per.value - 10) / 2);
-
- 
-  // Movement by class type
-
-  if (systemData.details.class_type === "str" || systemData.details.class_type === "int") {
-
-    systemData.attributes.movement_speed = 25;
-     //Movement seconds Math
-     systemData.attributes.movement_sec = systemData.attributes.movement_speed / 5;
-
-  }
-  else if (systemData.details.class_type === "dex") {
-
-      systemData.attributes.movement_speed = 35;
-       //Movement seconds Math
+    // Movement by class type
+    if (systemData.details.class_type === "str" || systemData.details.class_type === "int") {
+      systemData.attributes.movement_speed = 25;
+      //Movement seconds Math
       systemData.attributes.movement_sec = systemData.attributes.movement_speed / 5;
-
-  }
-  else {
-
-   systemData.attributes.movement_speed = 30;
+    }
+    else if (systemData.details.class_type === "dex") {
+        systemData.attributes.movement_speed = 35;
+        //Movement seconds Math
+        systemData.attributes.movement_sec = systemData.attributes.movement_speed / 5;
+    }
+    else {
+    systemData.attributes.movement_speed = 30;
     //Movement seconds Math
-  systemData.attributes.movement_sec = systemData.attributes.movement_speed / 5;
+    systemData.attributes.movement_sec = systemData.attributes.movement_speed / 5;
+    }
 
-  }
-
-
-
-
-
-  // Max Mana and HP dice
+    // Max Mana and HP dice
     if(systemData.levels === 1){
-    systemData.hp_dice.max = 1;
-
-    if (systemData.details.class_type === "dex" || systemData.details.class_type === "str"){
-
-      systemData.mana_dice.max = 0;
+      systemData.hp_dice.max = 1;
+      if (systemData.details.class_type === "dex" || systemData.details.class_type === "str"){
+        systemData.mana_dice.max = 0;
+      }
+      else{
+        systemData.mana_dice.max = 1;
+      }
     }
     else{
-       systemData.mana_dice.max = 1;
+      systemData.hp_dice.max = Math.floor(systemData.levels / 2);
+      if (systemData.details.class_type === "dex" || systemData.details.class_type === "str"){
+        systemData.mana_dice.max = 0; 
+      }
+      else{
+        systemData.mana_dice.max = Math.floor(systemData.levels / 2); 
+      }
     }
-   
-
-  }
-  else{
-
-    systemData.hp_dice.max = Math.floor(systemData.levels / 2);
-
-     if (systemData.details.class_type === "dex" || systemData.details.class_type === "str"){
-
-       systemData.mana_dice.max = 0; 
-     }
-     else{
-
-       systemData.mana_dice.max = Math.floor(systemData.levels / 2); 
-
-     }
-
-  }
- 
-// Mana / HP dice types
-
-  if (systemData.details.class_type === "str") {
+  
+    // Mana / HP dice types
+    if (systemData.details.class_type === "str") {
       systemData.hp_dice_type = "1d10";
       systemData.mana_dice_type = game.i18n.localize("dnd.mana_type_str_dex");
-      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_str")
-      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_str")
+      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_str");
+      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_str");
     }
-  else if (systemData.details.class_type === "dex") {
+    else if (systemData.details.class_type === "dex") {
       systemData.hp_dice_type = "1d8"
       systemData.mana_dice_type = game.i18n.localize("dnd.mana_type_str_dex");
-      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_dex")
-      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_dex")
+      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_dex");
+      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_dex");
     }
-   else if (systemData.details.class_type === "mixed_str") {
+    else if (systemData.details.class_type === "mixed_str") {
       systemData.hp_dice_type = "1d8";
       systemData.mana_dice_type = "1d8*25"
-      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_str")
-      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_str")
+      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_str");
+      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_str");
     }
     else if (systemData.details.class_type === "mixed_dex") {
       systemData.hp_dice_type = "1d8";
       systemData.mana_dice_type = "1d8*25"
-      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_dex")
-      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_dex")
+      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_dex");
+      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_dex");
     }
-  else if (systemData.details.class_type === "int") {
+    else if (systemData.details.class_type === "int") {
       systemData.hp_dice_type = "1d6";
       systemData.mana_dice_type = "1d12*25";
-      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_int")
-      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_int")
+      systemData.usable_weapon = game.i18n.localize("dnd.w.equip_c_int");
+      systemData.usable_armour = game.i18n.localize("dnd.a.equip_c_int");
     }
 
-
-
- //Level Cost
+  //Level Cost
     this.system.level = systemData.levels;
-  
+
     const xp = this.system.xp;
     xp.max = this.getLevelExp(this.system.level || 1);
     const prior = this.getLevelExp(this.system.level - 1 || 0);
@@ -165,69 +131,55 @@ _prepareCharacterData(actorData) {
     const pct = Math.round((xp.value - prior) * 100 / required);
     xp.pct = Math.clamped(pct, 0, 100);
 
-//AC Class
+  //AC Class
     let ac_armorfull = 10;
     let ac_armor_type = "";
 
     for (const armorItem of this.itemTypes.armor) {
-        if (armorItem.system.eq) {
-          ac_armorfull = parseInt(armorItem.system.ac_full || '10')
-         ac_armor_type += armorItem.system.armor_type || '0'
+      if (armorItem.system.eq) {
+        ac_armorfull = parseInt(armorItem.system.ac_full || '10')
+        ac_armor_type += armorItem.system.armor_type || '0'
+      }
+    }
+
+    if (ac_armor_type === "light") {
+      systemData.attributes.ac = ac_armorfull + systemData.ac_bonus + systemData.abilities.dex.mod;
+    }
+    else if (ac_armor_type === "medium") {
+      if (systemData.abilities.dex.mod > 2) {
+        systemData.attributes.ac = ac_armorfull + systemData.ac_bonus + 2;
+      }
+      else{
+        systemData.attributes.ac = ac_armorfull + systemData.ac_bonus + systemData.abilities.dex.mod;
+      }
+    }
+    else if (ac_armor_type === "heavy") {
+      systemData.attributes.ac = ac_armorfull + systemData.ac_bonus;
+    }
+    else {
+      systemData.attributes.ac = ac_armorfull + systemData.ac_bonus + systemData.abilities.dex.mod;
+    }
+
+    // Inv item count
+    let item_count = 0;
+    for (const i of this.items) {
+      if (i.type === 'melee_weapon' || i.type === 'range_weapon' || i.type === 'armor') {
+        if (i.system.eq === true) {
+          item_count += 0;
+        }
+        else {
+          item_count += 1;
         }
       }
-
-      if (ac_armor_type === "light") {
-         systemData.attributes.ac = ac_armorfull + systemData.ac_bonus + systemData.abilities.dex.mod;
-
-      }
-      else if (ac_armor_type === "medium") {
-
-        if (systemData.abilities.dex.mod > 2) {
-
-          systemData.attributes.ac = ac_armorfull + systemData.ac_bonus + 2;
-        }
-        else{
-
-          systemData.attributes.ac = ac_armorfull + systemData.ac_bonus + systemData.abilities.dex.mod;
-
-        }
-
-      }
-      else if (ac_armor_type === "heavy") {
-
-        systemData.attributes.ac = ac_armorfull + systemData.ac_bonus;
-
-      }
-      else {
-
-         systemData.attributes.ac = ac_armorfull + systemData.ac_bonus + systemData.abilities.dex.mod;
-
-      }
-     
-     // Inv item count
-      let item_count = 0;
-      for (const i of this.items) {
-        if (i.type === 'melee_weapon' || i.type === 'range_weapon' || i.type === 'armor') {
-          if (i.system.eq === true) {
-            item_count += 0;
-
-          }
-          else {
-            item_count += 1;
-
-          }
-
-        }
-        else if (i.type === 'spell' || i.type === 'skill') { item_count += 0;}
-        else{ item_count += 1;}
-        
-      }
-
+      else if (i.type === 'spell' || i.type === 'skill') { item_count += 0;}
+      else{ item_count += 1;}
+    }
+    // Overlimit
     if(systemData.inv_size === "tiny" && item_count > 10 ){
-     systemData.inv_count = game.i18n.localize("dnd.Overlimit") +"("+ item_count + ")";
+      systemData.inv_count = game.i18n.localize("dnd.Overlimit") +"("+ item_count + ")";
     }
     else if(systemData.inv_size === "small" && item_count > 15 ){
-     systemData.inv_count = game.i18n.localize("dnd.Overlimit") +"("+ item_count + ")";
+      systemData.inv_count = game.i18n.localize("dnd.Overlimit") +"("+ item_count + ")";
     }
     else if (systemData.inv_size === "medium" && item_count > 25 ) {
       systemData.inv_count = game.i18n.localize("dnd.Overlimit") +"("+ item_count + ")";
@@ -236,42 +188,35 @@ _prepareCharacterData(actorData) {
       systemData.inv_count = game.i18n.localize("dnd.Overlimit") +"("+ item_count + ")";
     }
     else{
-
-       systemData.inv_count = item_count;
-
+      systemData.inv_count = item_count;
     }
 
-
+    //Death Saves
     if (systemData.dying.success >= 3) {
       systemData.dying.success = 3;
       systemData.dying.failure = 0;
       systemData.dying.isDead = game.i18n.localize("dnd.isAlive");
       systemData.attributes.hp.value = 1;
-
     }
     if (systemData.dying.failure >= 3) {
-
       systemData.dying.failure = 3;
       systemData.dying.success = 0;
       systemData.dying.isDead = game.i18n.localize("dnd.isDead");
-
     }
+  }
 
-}
-_prepareNpcData(actorData){}
-_prepareEnemyData(actorData){ 
+  _prepareNpcData(actorData){}
+  _prepareEnemyData(actorData){ 
     if (actorData.type !== 'Enemy') return;
     const systemData = actorData.system;
 
-  systemData.abilities.str.mod = Math.floor((systemData.abilities.str.value - 10) / 2);
-  systemData.abilities.dex.mod = Math.floor((systemData.abilities.dex.value - 10) / 2);
-  systemData.abilities.int.mod = Math.floor((systemData.abilities.int.value - 10) / 2);
-  systemData.abilities.cha.mod = Math.floor((systemData.abilities.cha.value - 10) / 2);
-  systemData.abilities.per.mod = Math.floor((systemData.abilities.per.value - 10) / 2);
-  systemData.attributes.movement.sec = systemData.attributes.movement.walk / 5;
-}
-
-
+    systemData.abilities.str.mod = Math.floor((systemData.abilities.str.value - 10) / 2);
+    systemData.abilities.dex.mod = Math.floor((systemData.abilities.dex.value - 10) / 2);
+    systemData.abilities.int.mod = Math.floor((systemData.abilities.int.value - 10) / 2);
+    systemData.abilities.cha.mod = Math.floor((systemData.abilities.cha.value - 10) / 2);
+    systemData.abilities.per.mod = Math.floor((systemData.abilities.per.value - 10) / 2);
+    systemData.attributes.movement.sec = systemData.attributes.movement.walk / 5;
+  }
 
   getRollData() {
     const data = super.getRollData();
@@ -281,31 +226,25 @@ _prepareEnemyData(actorData){
     this._getNpcRollData(data);
     this._getEnemyData(data);
 
-
-
     return data;
   }
 
- _getCharacterRollData(data) {
+  _getCharacterRollData(data) {
     if (this.type !== 'character') return;
 
-     if (data.abilities) {
+    if (data.abilities) {
       for (let [k, v] of Object.entries(data.abilities)) {
         data[k] = foundry.utils.deepClone(v);
       }
     }
+  }
 
-
-}
 _getNpcRollData(data) {}
 _getEnemyData(data){}
 
-
- getLevelExp(level) {
+  getLevelExp(level) {
     const levels = CONFIG.dungeons_and_dwarves.CHARACTER_EXP_LEVELS;
     return levels[Math.min(level, levels.length - 1)];
   }
-
-
 }
- 
+
