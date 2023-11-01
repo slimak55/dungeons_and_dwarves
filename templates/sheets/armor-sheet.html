@@ -2,49 +2,46 @@
     <header class="sheet-header">
       <table class="table table_main left">
         <tr>
-          
           <td><img src="{{item.img}}" data-edit="img" title="{{item.name}}" height="64" width="64"/></td>
-            <td><h1><input style="width:375px" name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'dnd.Name' }}"/></h1></td>
-            <td> <h1 class="sheet">{{localize "dnd.ac"}}:{{numberFormat system.ac_full}}</h1></td>
-
+          <td><h1><input style="width:375px" name="name" type="text" value="{{item.name}}" placeholder="{{ localize 'dnd.Name' }}"/></h1></td>
+          <td> <h1 class="sheet">{{localize "dnd.ac"}}:{{numberFormat system.ac_full}}</h1></td>
         </tr>
-
-      </table>
-        
+      </table> 
     </header>
-   <div class="flexrow">
-    <h2 class="box_w sheet">{{localize "dnd.a_info"}}</h2>
-      </div>
-      <div class="flexrow">
-    <table class="table_main table_shadow">
-  <tr>
-    <td class="bold">{{localize "dnd.ac"}}:</td>
-    <td><input name="system.ac_armor" type="text" value="{{system.ac_armor}}" data-dtype="Number"/></td>
-     <td class="bold">{{localize "dnd.u_mod"}}:</td>
-     <td><input name="system.ac_mod" type="text" value="{{system.ac_mod}}" data-dtype="Number"/></td>
-      <td class="bold">{{localize "dnd.a_type"}}:</td>
-     <td><select name="system.armor_type"> {{selectOptions config.armor_type selected=system.armor_type localize=true}}</select></td>
-  </tr>
 
-        <tr>
-     <td class="bold">{{localize "dnd.isEquipped"}}:</td>
-    <td><input class="ui-checkbox" type="checkbox" name="system.eq" {{checked system.eq}}></td>
-  </tr>
-    <tr>
-     <td class="bold">{{localize "dnd.inv_quantity"}}:</td>
-    <td><input name="system.quantity" type="text" value="{{system.quantity}}" data-dtype="Number"/></td>
-    <td class="bold">{{localize "dnd.cost"}}:</td>
-    <td><input name="system.cost" type="text" value="{{system.cost}}" data-dtype="Number"/></td>
-    <td><select name="system.cost_type"> {{selectOptions config.cost_type selected=system.cost_type localize=true}}</select></td>
-    <td class="bold">{{localize "dnd.rariry"}}:</td>
-    <td><select name="system.rarity"> {{selectOptions config.rarity selected=system.rarity localize=true}}</select></td>
-  </tr>
-</table>
- </div>
-     <div class="flexrow">
-<h2 class="sheet">{{localize "dnd.desc"}}</h2>
-</div>
-<div class="flexrow">
- {{editor item.info target="system.info" button=true editable=editable}}
-</div>
+    <div class="flexrow">
+      <h2 class="box_w sheet">{{localize "dnd.a_info"}}</h2>
+    </div>
+    <div class="flexrow">
+      <table class="table_main table_shadow">
+      <tr>
+        <td class="bold">{{localize "dnd.ac"}}:</td>
+        <td><input name="system.ac_armor" type="text" value="{{system.ac_armor}}" data-dtype="Number"/></td>
+        <td class="bold">{{localize "dnd.u_mod"}}:</td>
+        <td><input name="system.ac_mod" type="text" value="{{system.ac_mod}}" data-dtype="Number"/></td>
+        <td class="bold">{{localize "dnd.a_type"}}:</td>
+        <td><select name="system.armor_type"> {{selectOptions config.armor_type selected=system.armor_type localize=true}}</select></td>
+      </tr>
+
+      <tr>
+        <td class="bold">{{localize "dnd.isEquipped"}}:</td>
+        <td><input class="ui-checkbox" type="checkbox" name="system.eq" {{checked system.eq}}></td>
+      </tr>
+      <tr>
+        <td class="bold">{{localize "dnd.inv_quantity"}}:</td>
+        <td><input name="system.quantity" type="text" value="{{system.quantity}}" data-dtype="Number"/></td>
+        <td class="bold">{{localize "dnd.cost"}}:</td>
+        <td><input name="system.cost" type="text" value="{{system.cost}}" data-dtype="Number"/></td>
+        <td><select name="system.cost_type"> {{selectOptions config.cost_type selected=system.cost_type localize=true}}</select></td>
+        <td class="bold">{{localize "dnd.rariry"}}:</td>
+        <td><select name="system.rarity"> {{selectOptions config.rarity selected=system.rarity localize=true}}</select></td>
+      </tr>
+      </table>
+    </div>
+    <div class="flexrow">
+      <h2 class="sheet">{{localize "dnd.desc"}}</h2>
+    </div>
+    <div class="flexrow">
+      {{editor item.info target="system.info" button=true editable=editable}}
+    </div>
 </form>

@@ -3,34 +3,25 @@
         <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="64" width="64"/>
         <h1><input name="name" type="text" value="{{actor.name}}" placeholder="{{ localize 'dnd.Name' }}"/></h1>
     </header>
-  {{!-- Sheet Tab Navigation --}}
-  <nav class="sheet-tabs tabs" data-group="primary">
-    {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="info">{{localize "dnd.b_info"}}</a>
-    <a class="item" data-tab="notes">{{localize "dnd.tab_notes"}}</a>
-  </nav>
-
-  <section class="sheet-body">
-<div class="tab info" data-group="primary" data-tab="info">
-    <h3 class="sheet">{{localize "dnd.hp"}}</h3>
-<table class="table_main">
-    <tr>
-        <td><input name="system.hp.value" type="text" value="{{system.hp.value}}" data-dtype="Number"/></td>
-        <td>/</td>
-       <td><input name="system.hp.max" type="text" value="{{system.hp.max}}" data-dtype="Number"/></td>
-
-    </tr>
-
-</table>
- </div>
-
-   
-    
-<div class="tab notes" data-tab="notes"> 
-
-     {{editor notes target="system.notes" button=true editable=editable}}
-
-</div>
-
-</section>
-    </form>
+        {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        {{!-- Default tab is specified in actor-sheet.mjs --}}
+        <a class="item" data-tab="info">{{localize "dnd.b_info"}}</a>
+        <a class="item" data-tab="notes">{{localize "dnd.tab_notes"}}</a>
+    </nav>
+    <section class="sheet-body">
+        <div class="tab info" data-group="primary" data-tab="info">
+            <h3 class="sheet">{{localize "dnd.hp"}}</h3>
+            <table class="table_main">
+            <tr>
+                <td><input name="system.hp.value" type="text" value="{{system.hp.value}}" data-dtype="Number"/></td>
+                <td>/</td>
+                <td><input name="system.hp.max" type="text" value="{{system.hp.max}}" data-dtype="Number"/></td>
+            </tr>
+            </table>
+        </div>
+        <div class="tab notes" data-tab="notes"> 
+            {{editor notes target="system.notes" button=true editable=editable}}
+        </div>
+    </section>
+</form>
